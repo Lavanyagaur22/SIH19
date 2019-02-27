@@ -33,6 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GovtSchemsActivity"/>
+        <activity android:name=".GovtDetailActivity"/>
+        <activity android:name=".HelpActivity"/>
         <activity android:name=".NearbyPlace.ActivityMapsCurrentPlace"></activity>
     </application>
 

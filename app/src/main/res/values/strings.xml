@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">SIH19</string>
-
+    <string name="read_more">read more</string>
+    <string name="detail_content">detail content</string>
+    <string name="govt_schems">govt schems</string>
+    <string name="help">Help</string>
+    <string name="facing_problem">Facing Problems?</string>
+    <string name="watch_tutorial">Watch Tutorail</string>
+    <string name="watch_now">Click here to watch</string>
 
     <string name="google_maps_API_key">AIzaSyD4GjGI7-L3pnpRE2c8mAUYrr6LEyjmQqg</string>
     <string name="title_activity_maps">Shishu Kalyan</string>
@@ -12,3 +18,4 @@
 
 
 </resources>
+
