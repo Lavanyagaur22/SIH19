@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "473561210621-ladbc7erghv8p1gvhkovhh7bvr4fqvo8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingblocks.sih19",
+            "certificate_hash": "fe2fda9ceb83a8e622f9b5c40d3769d8a180defb"
+          }
+        },
+        {
           "client_id": "473561210621-ss9685aqg6r7ffh2on80cvfc3676h3ni.apps.googleusercontent.com",
           "client_type": 3
         }

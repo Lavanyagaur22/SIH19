@@ -17,6 +17,14 @@
     android:layout_height="match_parent"
     android:layout_above="@+id/rel_btn" />
 
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/img_place_info"
+        android:src="@drawable/ic_info"/>
 
     <LinearLayout
         android:layout_marginTop="15dp"
