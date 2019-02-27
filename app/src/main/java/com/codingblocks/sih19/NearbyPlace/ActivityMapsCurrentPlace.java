@@ -108,8 +108,8 @@ public class ActivityMapsCurrentPlace extends FragmentActivity implements OnMapR
             mMap.setMyLocationEnabled(true);
         }
 
-        Button btnCurrent = (Button) findViewById(R.id.btnGetNearestHospitals);
-        btnCurrent.setOnClickListener(new View.OnClickListener() {
+        Button btnHospitals =  findViewById(R.id.btnGetNearestHospitals);
+        btnHospitals.setOnClickListener(new View.OnClickListener() {
             String nearBy = "hospital";
             @Override
             public void onClick(View v) {
@@ -123,6 +123,24 @@ public class ActivityMapsCurrentPlace extends FragmentActivity implements OnMapR
                 GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
                 getNearbyPlacesData.execute(DataTransfer);
                 Toast.makeText(ActivityMapsCurrentPlace.this,"Nearby Hospitals", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Button btnDoctors=findViewById(R.id.btnGetNearestDoctors);
+        btnDoctors.setOnClickListener(new View.OnClickListener() {
+            String nearBy = "doctor";
+            @Override
+            public void onClick(View v) {
+               // Log.d("onClick", "Button is Clicked");
+                mMap.clear();
+                String url = getUrl(latitude, longitude, nearBy);
+                Object[] DataTransfer = new Object[2];
+                DataTransfer[0] = mMap;
+                DataTransfer[1] = url;
+              //  Log.d("onClick", url);
+                GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                getNearbyPlacesData.execute(DataTransfer);
+                Toast.makeText(ActivityMapsCurrentPlace.this,"Nearby Doctors", Toast.LENGTH_LONG).show();
             }
         });
 
