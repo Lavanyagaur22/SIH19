@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+<RelativeLayout
+    android:id="@+id/relmap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/rel_btn" />
+
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/rel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnGetNearestHospitals"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_shape"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="Get Nearby Hospital"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnGetNearestDoctors"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:text="Get Nearby Doctors"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+                <Button
+                    android:id="@+id/btnGetNearestMedicalStores"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_shape"
+                    android:text="Get Nearby Medical Stores"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+    </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
+</RelativeLayout>

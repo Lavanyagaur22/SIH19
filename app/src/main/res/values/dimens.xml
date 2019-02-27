@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding_left">30dp</dimen>
+    <dimen name="screen_padding_right">30dp</dimen>
+    <dimen name="margin_between_fields">30dp</dimen>
+    <dimen name="margin_between_text_edittext">20dp</dimen>
+
+
+</resources>
