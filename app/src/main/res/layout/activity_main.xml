@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,15 +7,34 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/govtSchmes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/govtSchmes"
-        android:text="@string/govt_schems"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/govt_schems"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/option_get_place"
-        android:id="@+id/btn"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/govtSchmes" />
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/immunizationLinearLayout"
+        android:layout_width="292dp"
+        android:layout_height="254dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn"/>
+
+
+</android.support.constraint.ConstraintLayout>
