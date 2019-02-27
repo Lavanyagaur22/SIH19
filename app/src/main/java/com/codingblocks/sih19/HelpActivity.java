@@ -76,7 +76,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
                 youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
                 youTubeRecyclerView.setAdapter(youTubeDetailList);
                 searchView= (SearchView)findViewById(R.id.seacrhView);
-               /* searchView.OnQueryTextListener(this);*/
+                searchView.setOnQueryTextListener(HelpActivity.this);
             }
 
             @Override
@@ -111,6 +111,6 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
         String text = newText;
         youTubeDetailList.filter(text);
 
-        return false;
+        return true;
     }
 }
