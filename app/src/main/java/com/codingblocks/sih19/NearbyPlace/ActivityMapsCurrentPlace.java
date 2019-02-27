@@ -144,6 +144,24 @@ public class ActivityMapsCurrentPlace extends FragmentActivity implements OnMapR
             }
         });
 
+        Button btnMedicalStores=findViewById(R.id.btnGetNearestMedicalStores);
+        btnMedicalStores.setOnClickListener(new View.OnClickListener() {
+            String nearBy = "pharmacy";
+            @Override
+            public void onClick(View v) {
+                // Log.d("onClick", "Button is Clicked");
+                mMap.clear();
+                String url = getUrl(latitude, longitude, nearBy);
+                Object[] DataTransfer = new Object[2];
+                DataTransfer[0] = mMap;
+                DataTransfer[1] = url;
+                //  Log.d("onClick", url);
+                GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                getNearbyPlacesData.execute(DataTransfer);
+                Toast.makeText(ActivityMapsCurrentPlace.this,"Nearby Medical Stores", Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 
