@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<String> immuneList;
 
-    Button btn, viewImmunizationButton;
+    Button btn, viewImmunizationButton , phoneVerify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         immunizationLinearLayout = findViewById(R.id.immunizationLinearLayout);
         govtSchemsBtn=findViewById(R.id.govtSchmes);
         viewImmunizationButton = findViewById(R.id.viewImmunizationButton);
+        phoneVerify = findViewById(R.id.phoneVerifyButton);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -188,6 +189,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, ActivityMapsCurrentPlace.class);
+                startActivity(intent);
+            }
+        });
+        phoneVerify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,PhoneVerifyActivity.class);
                 startActivity(intent);
             }
         });
