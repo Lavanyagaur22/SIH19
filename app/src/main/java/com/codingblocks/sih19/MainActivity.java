@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 String currMonth = dateString.substring(3,5);
                 String currYear = dateString.substring(6,10);
                 String age =  AgeCalculater.findAge(Integer.parseInt(currDay),Integer.parseInt(currMonth),Integer.parseInt(currYear),12,1,2018);
-
+                Log.e("aggggg",age+"");
                 Intent intent = new Intent(MainActivity.this,DietActivity.class);
                 intent.putExtra("Age",age);
                 startActivity(intent);
