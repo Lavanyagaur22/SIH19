@@ -11,6 +11,11 @@
     <string name="name">Name</string>
     <string name="content">Content</string>
     <string name="location">Location</string>
+    <string name="diet_plan">Diet Plan</string>
+    <string name="breakfast">BreakFast</string>
+    <string name="lunch">Lunch</string>
+    <string name="snacks">Snacks</string>
+    <string name="dinner">Dinner</string>
 
     <string name="google_maps_API_key">AIzaSyD4GjGI7-L3pnpRE2c8mAUYrr6LEyjmQqg</string>
     <string name="title_activity_maps">Shishu Kalyan</string>

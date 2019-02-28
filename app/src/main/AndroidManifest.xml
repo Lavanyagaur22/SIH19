@@ -40,6 +40,8 @@
         <activity android:name=".WebViewActivity" />
         <activity android:name=".NGODetailActivity"/>
         <activity android:name=".BMIGraphActivity" />
+        <activity android:name=".PhoneVerifyActivity"/>
+        <activity android:name=".DietActivity"/>
 
     </application>
 
