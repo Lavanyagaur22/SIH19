@@ -46,4 +46,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/immunizationLinearLayout" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="524dp"
+        android:text="graph"
+        android:id="@+id/btnGraph"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

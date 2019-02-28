@@ -39,6 +39,7 @@
         <activity android:name=".NearbyPlace.ActivityMapsCurrentPlace" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".NGODetailActivity"/>
+        <activity android:name=".BMIGraphActivity" />
 
     </application>
 
