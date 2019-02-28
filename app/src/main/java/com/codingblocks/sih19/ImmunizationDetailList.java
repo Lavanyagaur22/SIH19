@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.squareup.picasso.Picasso;
@@ -51,6 +52,14 @@ public class ImmunizationDetailList extends RecyclerView.Adapter<ImmunizationDet
     public void onBindViewHolder(final ImmunizationDetailList.MyHolder holder, final int position) {
 
         holder.immunizationTextView.setText(immuneList.get(position));
+
+        holder.viewFAQTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(context, "Dead end! Work in progress", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

@@ -8,24 +8,35 @@
         android:id="@+id/immunizationCardView"
         android:elevation="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="80dp">
 
         <TextView
             android:id="@+id/immunizationTextView"
             android:inputType="textMultiLine"
             android:text="Details of Immunization 1"
-            android:textSize="24dp"
-            android:layout_width="300dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/productsansmedium"
+            android:textColor="#01579B"
+            android:layout_width="280dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/viewFAQTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="right"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
             android:text="View FAQs" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#ededed" />
 
     </android.support.v7.widget.CardView>
 

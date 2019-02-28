@@ -127,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
                     checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                            
-                            // ToDo: Do something
+
+                            Toast.makeText(MainActivity.this, "Number of days is hardcoded", Toast.LENGTH_SHORT).show();
 
                         }
                     });
