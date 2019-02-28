@@ -38,6 +38,8 @@
         <activity android:name=".HelpActivity" />
         <activity android:name=".NearbyPlace.ActivityMapsCurrentPlace" />
         <activity android:name=".WebViewActivity" />
+        <activity android:name=".NGODetailActivity"/>
+
     </application>
 
 </manifest>

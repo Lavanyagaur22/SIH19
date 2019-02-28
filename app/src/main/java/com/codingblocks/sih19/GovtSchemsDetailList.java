@@ -18,6 +18,7 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
     List<GovtDetailClass> govtDetailClassList;
 
     private Context context;
+    String detailContent,name;
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
@@ -32,7 +33,7 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
     @Override
     public void onBindViewHolder(final MyHolder holder, int position) {
 
-        final GovtDetailClass govtDetailClass = govtDetailClassList.get(position);
+       GovtDetailClass govtDetailClass = govtDetailClassList.get(position);
 
       /*  StorageReference storageReference = storage.getReferenceFromUrl("gs://sih19-dd177.appspot.com").child("GovtSchems");
 
@@ -48,14 +49,15 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
 
         holder.nameTV.setText(govtDetailClass.getName());
         holder.contentTV.setText(govtDetailClass.getContent());
-        final String detailContent = govtDetailClass.getDetail();
+         detailContent = govtDetailClass.getDetail();
+        name = govtDetailClass.getName();
 
         holder.readmoreTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
              Intent intent = new Intent(context, GovtDetailActivity.class);
              intent.putExtra(R.string.detail_content+"",detailContent);
-             intent.putExtra("Name",govtDetailClass.getName());
+             intent.putExtra("Name",name);
              context.startActivity(intent);
             }
         });

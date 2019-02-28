@@ -75,7 +75,7 @@ public class SchemsFragment extends Fragment {
 
 
 
-                      govtSchemsDetailList = new GovtSchemsDetailList(govtList, context);
+                        govtSchemsDetailList = new GovtSchemsDetailList(govtList, context);
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
