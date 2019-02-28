@@ -32,6 +32,11 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -71,12 +76,14 @@ public class MainActivity extends AppCompatActivity {
         viewImmunizationButton = findViewById(R.id.viewImmunizationButton);
         phoneVerify = findViewById(R.id.phoneVerifyButton);
 
+
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         immuneList = new ArrayList<>();
+
 
         databaseReference = firebaseDatabase.getReference("CerebralPalsy/Immunization");
 
@@ -178,8 +185,21 @@ public class MainActivity extends AppCompatActivity {
         govtSchemsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Intent intent = new Intent(MainActivity.this,GovtSchemsActivity.class);
-              startActivity(intent);
+            /*  Intent intent = new Intent(MainActivity.this,GovtSchemsActivity.class);
+              startActivity(intent);*/
+
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date date = new Date();
+                final String dateString = dateFormat.format(date);
+
+                String currDay = dateString.substring(0,2);
+                String currMonth = dateString.substring(3,5);
+                String currYear = dateString.substring(6,10);
+                String age =  AgeCalculater.findAge(Integer.parseInt(currDay),Integer.parseInt(currMonth),Integer.parseInt(currYear),12,1,2018);
+
+                Intent intent = new Intent(MainActivity.this,DietActivity.class);
+                intent.putExtra("Age",age);
+                startActivity(intent);
             }
         });
 
@@ -202,5 +222,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
 }
