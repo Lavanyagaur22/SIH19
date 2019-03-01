@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/walli"
+    android:layout_height="match_parent"
+    >
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:clipChildren="false"
+        android:textColorHint="#BDBDBD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signinView">
+
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/usernametextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/login_corners"
+            android:ems="10"
+            android:fontFamily="@font/productsans"
+            android:hint="@string/email_address"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:translationY="4dp"
+            tools:ignore="RtlHardcoded" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        android:clipChildren="false"
+        android:layout_marginTop="30dp"
+        android:textColorHint="#BDBDBD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleContentDescription="View Password"
+        app:passwordToggleTint="#ffffff">
+
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/passwordtextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/usernametextView"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/login_corners"
+            android:ems="10"
+            android:fontFamily="@font/productsans"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:translationY="3dp"
+            tools:ignore="RtlHardcoded"
+            tools:layout_editor_absoluteY="196dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/signinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/productsansbold"
+        android:text="@string/Login"
+        android:textColor="#ffffff"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvLoginToSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/productsansbold"
+        android:text="@string/New_User_Sign_Up"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:fabSize="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:backgroundTint="#4CAF50"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="20dp"
+        android:theme="@style/ThemeOverlay.AppCompat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71"
+        app:srcCompat="@drawable/ic_chevron_right_black_24dp" />
+
+    <TextView
+        android:id="@+id/forgotPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_above="@+id/btnSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/productsans"
+        android:text="@string/Forgot_Password_Click_Here"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvLoginToSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/usernameImageView"
+        android:layout_width="25dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="83dp"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/signinView"
+        app:srcCompat="@drawable/usernamegreen" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="33dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+        app:srcCompat="@drawable/password" />
+
+</android.support.constraint.ConstraintLayout>
