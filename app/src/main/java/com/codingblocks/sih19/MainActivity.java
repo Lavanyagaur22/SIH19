@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<String> immuneList;
 
-    Button btn, viewImmunizationButton;
+    Button btn, viewImmunizationButton , phoneVerify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         immunizationLinearLayout = findViewById(R.id.immunizationLinearLayout);
         govtSchemsBtn=findViewById(R.id.govtSchmes);
         viewImmunizationButton = findViewById(R.id.viewImmunizationButton);
+        phoneVerify = findViewById(R.id.phoneVerifyButton);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -178,8 +180,21 @@ public class MainActivity extends AppCompatActivity {
         govtSchemsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Intent intent = new Intent(MainActivity.this,GovtSchemsActivity.class);
-              startActivity(intent);
+            /*  Intent intent = new Intent(MainActivity.this,GovtSchemsActivity.class);
+              startActivity(intent);*/
+
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date date = new Date();
+                final String dateString = dateFormat.format(date);
+
+                String currDay = dateString.substring(0,2);
+                String currMonth = dateString.substring(3,5);
+                String currYear = dateString.substring(6,10);
+                String age =  AgeCalculater.findAge(Integer.parseInt(currDay),Integer.parseInt(currMonth),Integer.parseInt(currYear),12,1,2018);
+                Log.e("aggggg",age+"");
+                Intent intent = new Intent(MainActivity.this,DietActivity.class);
+                intent.putExtra("Age",age);
+                startActivity(intent);
             }
         });
 
@@ -192,8 +207,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        phoneVerify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,DranDropGame.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
+
+
 
 }

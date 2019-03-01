@@ -16,6 +16,15 @@
     <string name="lunch">Lunch</string>
     <string name="snacks">Snacks</string>
     <string name="dinner">Dinner</string>
+    <string name="Forgot_Password_Click_Here">Forget Password Click Here</string>
+    <string name="New_User_Sign_Up">New user Sign Up</string>
+    <string name="Login">Login</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="Already_Registered_Login">Already Registred Login</string>
+    <string name="CANCEL">Cancel</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="SendMail">Send Mail</string>
 
     <string name="google_maps_API_key">AIzaSyD4GjGI7-L3pnpRE2c8mAUYrr6LEyjmQqg</string>
     <string name="title_activity_maps">Shishu Kalyan</string>
