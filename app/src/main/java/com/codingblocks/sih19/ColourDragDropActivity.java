@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class NumberDragDropGameActivity extends AppCompatActivity implements View.OnTouchListener,View.OnDragListener {
+public class ColourDragDropActivity extends AppCompatActivity implements View.OnTouchListener,View.OnDragListener {
 
     private TextView text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14;
 
@@ -26,36 +26,36 @@ public class NumberDragDropGameActivity extends AppCompatActivity implements Vie
             String text=dropTarget.getText().toString();//target
             Log.e("TAG","Target"+text+" options"+options);
 
-            if(options.equals("1")&&text.equals("One"))
+            if(options.equals("Red")&&text.equals("1"))
             {
                 Toast.makeText(this, "1 one", Toast.LENGTH_SHORT).show();
                 Log.e("TAG","INSIDE 1");
             }
-            else if (options.equals("2")&&text.equals("Two")){
+            else if (options.equals("Black")&&text.equals("2")){
                 Toast.makeText(this, "2 two ", Toast.LENGTH_SHORT).show();
                 Log.e("TAG"," INSIDE 2");
             }
-            else if(options.equals("3")&&text.equals("Three"))
+            else if(options.equals("Yellow")&&text.equals("3"))
             {
                 Toast.makeText(this, "3 three", Toast.LENGTH_SHORT).show();
                 Log.e("TAG","INSIDE 2");
             }
-            else if(options.equals("4")&&text.equals("Four"))
+            else if(options.equals("Blue")&&text.equals("Four"))
             {
                 Toast.makeText(this, "4 three", Toast.LENGTH_SHORT).show();
                 Log.e("TAG","INSIDE 2");
             }
-            else if(options.equals("5")&&text.equals("Five"))
+            else if(options.equals("Orange")&&text.equals("5"))
             {
                 Toast.makeText(this, "5 three", Toast.LENGTH_SHORT).show();
                 Log.e("TAG","INSIDE 2");
             }
-            else if(options.equals("6")&&text.equals("six"))
+            else if(options.equals("Pink")&&text.equals("6"))
             {
                 Toast.makeText(this, "6 three", Toast.LENGTH_SHORT).show();
                 Log.e("TAG","INSIDE 2");
             }
-            else if(options.equals("7")&&text.equals("Seven"))
+            else if(options.equals("Green")&&text.equals("7"))
             {
                 Toast.makeText(this, "7 three", Toast.LENGTH_SHORT).show();
                 Log.e("TAG","INSIDE 2");
@@ -89,7 +89,7 @@ public class NumberDragDropGameActivity extends AppCompatActivity implements Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_number_darg_drop);
+        setContentView(R.layout.activity_colour_drag_drop);
 
         text1 = (TextView)findViewById(R.id.textView1);
         text2 = (TextView)findViewById(R.id.textView2);
