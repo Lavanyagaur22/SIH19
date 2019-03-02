@@ -90,7 +90,7 @@
                             android:id="@+id/nameTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Ratul"
+                            android:text="Rahul"
                             android:textColor="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
