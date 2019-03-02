@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
        phoneVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,QuizGame.class);
+                Intent intent = new Intent(MainActivity.this,DragLevel1.class);
                 startActivity(intent);
             }
         });
@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
         btnFlashcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,DranDropGame.class);
+                Intent intent=new Intent(MainActivity.this,DragLevel1.class);
                 startActivity(intent);
             }
         });

@@ -31,8 +31,9 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/a"
             android:fontFamily="@font/productsansmedium"
-            android:textSize="0sp"
             android:text="1"
+            android:id="@+id/textView1"
+            android:textSize="0sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +42,9 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardVie
-        android:id="@+id/cardVie"
+    <android.support.v7.widget.CardView
         android:layout_width="95dp"
-        android:layout_height="100dp"
+        android:layout_height="73dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/productsansbold"
@@ -56,25 +56,27 @@
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="243dp">
+        app:layout_constraintVertical_bias="0.746"
+        tools:layout_editor_absoluteX="311dp">
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/c"
-            android:text = "2"
+            android:background="@drawable/b"
             android:fontFamily="@font/productsansmedium"
+            android:text="2"
             android:textSize="0sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
 
-    </android.support.v7.widget.CardVie>
+    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:layout_width="95dp"
@@ -102,6 +104,7 @@
             android:fontFamily="@font/productsansmedium"
             android:textSize="0sp"
             android:text="3"
+            android:id="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
