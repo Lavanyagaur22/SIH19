@@ -40,6 +40,7 @@
     </android.support.v7.widget.Toolbar>
 
 
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -151,7 +152,6 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                android:text="At Birth"
                                 android:background="@drawable/circularbg" />
 
                             <Button
@@ -160,7 +160,6 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                android:text="45 Days"
                                 android:background="@drawable/circularbg" />
 
                             <Button
@@ -169,7 +168,6 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                android:text="75 Days"
                                 android:background="@drawable/circularbg" />
 
                             <Button
@@ -178,7 +176,6 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                android:text="105 Days"
                                 android:background="@drawable/circularbg" />
 
                             <Button
@@ -187,7 +184,6 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                android:text="9 Months"
                                 android:background="@drawable/circularbg" />
 
                             <Button
@@ -196,7 +192,6 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                android:text="16-18 Months"
                                 android:background="@drawable/circularbg" />
 
                             <Button
@@ -205,7 +200,6 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                android:text="5 years"
                                 android:background="@drawable/circularbg" />
 
                             <Button

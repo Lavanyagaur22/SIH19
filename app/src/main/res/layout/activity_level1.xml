@@ -20,7 +20,7 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cardVie"
+        app:layout_constraintEnd_toStartOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView

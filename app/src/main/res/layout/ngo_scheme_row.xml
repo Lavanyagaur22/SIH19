@@ -26,22 +26,24 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/nameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/nameTextView"
-                android:text="@string/name"/>
+                android:text="@string/name" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="118dp"
+                android:weightSum="3"
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/circleImageView"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
                     android:src="@drawable/profile"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -49,33 +51,34 @@
 
                 <Button
                     android:id="@+id/CallButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
                     android:background="@drawable/call1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <Button
                     android:id="@+id/locationBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_shape"
                     android:padding="10dp"
                     android:text="@string/location"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </LinearLayout>
+
             <TextView
+                android:id="@+id/readmoreTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/read_more"
-                android:id="@+id/readmoreTextView"/>
+                android:text="@string/read_more" />
 
 
         </LinearLayout>
