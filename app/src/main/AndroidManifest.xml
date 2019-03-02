@@ -45,6 +45,9 @@
         <activity android:name=".SignupActivity"/>
         <activity android:name=".DranDropGame"/>
         <activity android:name=".NumberDragDropGameActivity"/>
+        <activity android:name=".ColourDragDropActivity"/>
+        <activity android:name=".FruitDragDropActivity"/>
+        <activity android:name=".ColourDailyObject"/>
 
     </application>
 

@@ -1,12 +1,10 @@
 package com.codingblocks.sih19;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,7 +15,6 @@ import android.widget.TableRow;
 import android.widget.Toast;
 
 import com.codingblocks.sih19.NearbyPlace.ActivityMapsCurrentPlace;
-import com.codingblocks.sih19.NearbyPlace.GetNearbyPlacesData;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,17 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -210,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         phoneVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,NumberDragDropGameActivity.class);
+                Intent intent = new Intent(MainActivity.this,ColourDailyObject.class);
                 startActivity(intent);
             }
         });

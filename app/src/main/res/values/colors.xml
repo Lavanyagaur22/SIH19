@@ -11,5 +11,9 @@
     <color name="darkgreen">#021E11</color>
     <color name="bgcolor">#232044</color>
     <color name="red">#FF0000</color>
-    <color name="green">#87E818</color>
+    <color name="yellow">#FBC02D</color>
+    <color name="blue">#1976D2</color>
+    <color name="green">#4CAF50</color>
+    <color name="orange">#FF5722</color>
+
 </resources>

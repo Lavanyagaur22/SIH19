@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- This is for adding objects -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/objects"
+        android:padding="1dp"
+        android:background="#000"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <!-- Upper Half -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/ObjectUpperHalf"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:background="#000"
+            android:layout_height="match_parent"
+            android:baselineAligned="false">
+
+            <!-- Three Columns -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:layout_margin="1dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/bat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bat"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:layout_margin="1dp"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/pen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/pen"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:layout_margin="1dp"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/chair"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/chair"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Three Colums end -->
+
+        </LinearLayout>
+
+        <!-- Lower Half -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/ObjectLowerHalf"
+            android:orientation="horizontal"
+            android:background="#000"
+            android:weightSum="3"
+            android:layout_height="match_parent">
+
+            <!-- Three Columns -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:layout_gravity="center"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/ball"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ball"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:layout_margin="1dp"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/pencil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/pencil"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:layout_margin="1dp"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/table"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/table"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Three columns end -->
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- Output window -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:weightSum="5"
+        android:id="@+id/output"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/objectImages"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_margin="-10dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/outputText"
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_marginTop="-10dp"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text=""
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <!-- This is for colors -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:id="@+id/colors"
+        android:weightSum="2"
+        android:background="#fff"
+        android:layout_height="match_parent">
+
+        <!-- Upper Half -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:id="@+id/ColorUpperHalf"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
+
+            <!-- Three Columns -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:id="@+id/black"
+                android:orientation="horizontal"
+                android:background="#000000"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:id="@+id/red"
+                android:orientation="horizontal"
+                android:background="#D32F2F"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:id="@+id/yellow"
+                android:orientation="horizontal"
+                android:background="#FBC02D"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+
+            <!-- Three Columns End -->
+
+        </LinearLayout>
+
+        <!-- Lower Half -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:weightSum="3"
+            android:id="@+id/ColorLowerHalf"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
+
+            <!-- Three Columns -->
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:id="@+id/orange"
+                android:orientation="horizontal"
+                android:background="#FF5722"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:id="@+id/green"
+                android:orientation="horizontal"
+                android:background="#4CAF50"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:orientation="horizontal"
+                android:id="@+id/blue"
+                android:background="#1976D2"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+
+
+            <!-- Three Columns End -->
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
