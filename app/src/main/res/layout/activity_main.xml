@@ -403,29 +403,26 @@
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <TextView
-                                    android:id="@+id/textView31"
+                                <ImageView
+                                    android:id="@+id/imageView18"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="4dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="center"
                                     android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:text="Call"
-                                    android:textColor="@color/colorPrimaryDark"
-                                    android:textSize="18dp"
-                                    android:textStyle="bold" />
+                                    app:srcCompat="@drawable/call1" />
 
-                                <TextView
-                                    android:id="@+id/textView32"
+                                <Button
+                                    android:id="@+id/locationBtn2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="4dp"
+                                    android:layout_margin="10dp"
                                     android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:text="Navigate"
-                                    android:textColor="@color/colorPrimaryDark"
-                                    android:textSize="18dp"
-                                    android:textStyle="bold" />
+                                    android:background="@drawable/btn_shape"
+                                    android:padding="10dp"
+                                    android:text="@string/location"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
                             </LinearLayout>
 
                         </LinearLayout>
