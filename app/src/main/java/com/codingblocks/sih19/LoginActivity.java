@@ -54,8 +54,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private String userEmail, userPassword;
 
-    SharedPreferences sharedPreferences;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +74,6 @@ public class LoginActivity extends AppCompatActivity {
         etUserEmail = findViewById(R.id.usernametextView);
         etUserPassword = findViewById(R.id.passwordtextView);
         forgotPassword = findViewById(R.id.forgotPasswordTextView);
-
-
 
 
         ConnectivityManager connectivityManager
@@ -113,40 +109,12 @@ public class LoginActivity extends AppCompatActivity {
 
                                 mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
-                                databaseReference1 = firebaseDatabase.getReference("CerebralPalsy/Personal Details/" + mFirebaseUser.getUid());
-                                databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                        range = dataSnapshot.getChildrenCount();
-
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                    }
-                                });
-
-                                FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(LoginActivity.this, new OnSuccessListener<InstanceIdResult>() {
-                                    @Override
-                                    public void onSuccess(InstanceIdResult instanceIdResult) {
-                                        String refreshedToken = instanceIdResult.getToken();
-
-                                        databaseReference = firebaseDatabase.getReference("CerebralPalsy/Personal Details/" + mFirebaseAuth.getCurrentUser().getUid() + "Intial Detail");
-                                        databaseReference.child("Token").child(refreshedToken).setValue(Build.MODEL);
-
-                                    }
-                                });
-
-
-
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();
 
                             } else {
                                 progressDialog.dismiss();
-                                Toast.makeText(LoginActivity.this, "Username/Password is Incorrect", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -164,7 +132,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this,SignupActivity.class));
-                finish();
             }
         });
 
