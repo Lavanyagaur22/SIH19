@@ -38,11 +38,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-
-import static android.util.Config.LOGD;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         immuneList = new ArrayList<>();
-
 
         databaseReference = firebaseDatabase.getReference("CerebralPalsy/Immunization");
 
@@ -215,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
         phoneVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PhoneVerifyActivity.class);
+                Intent intent = new Intent(MainActivity.this,NumberDragDropGameActivity.class);
                 startActivity(intent);
             }
         });
