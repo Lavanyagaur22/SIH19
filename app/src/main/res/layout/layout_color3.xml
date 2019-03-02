@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/tvNameOfColor"
         android:layout_marginTop="50dp"
-        android:text="Blue"
+        android:text="RED"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textSize="32dp"/>
@@ -24,16 +24,32 @@
             android:layout_weight="1"
             android:layout_margin="10dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/img1level1"
+            android:src="@drawable/level3img1"
             android:id="@+id/img1"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:src="@drawable/img2level1"
+            android:src="@drawable/level3img2"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/img2"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/level3img3"
+            android:id="@+id/img3"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/level3img4"
+            android:layout_height="wrap_content"
+            android:id="@+id/img4"/>
+
 
     </LinearLayout>
 

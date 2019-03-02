@@ -23,7 +23,7 @@ public class DragLevel1 extends AppCompatActivity implements View.OnTouchListene
     FirebaseDatabase firebaseDatabase;
 
     DatabaseReference databaseReference;
-    Long correct ,incorrect;
+    long correct ,incorrect;
     String options,text;
     TextView dropped,dropTarget;
 
@@ -49,6 +49,7 @@ public class DragLevel1 extends AppCompatActivity implements View.OnTouchListene
 
                     correct = dataSnapshot.child("Correct").getValue(Long.class);
                     incorrect = dataSnapshot.child("Incorrect").getValue(Long.class);
+                    Log.e("TAG","Incorrect"+incorrect);
                     if(options.equals("3")&&text.equals("1"))
                     {
                         correct = correct+1;
