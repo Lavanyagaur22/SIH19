@@ -208,20 +208,6 @@
                         </LinearLayout>
                     </HorizontalScrollView>
 
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="Content" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="Content" />
-
                     <TextView
                         android:id="@+id/viewImmunizationButton"
                         android:layout_width="match_parent"
