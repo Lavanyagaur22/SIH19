@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         immunizationLinearLayout = findViewById(R.id.immunizationLinearLayout);
         govtSchemsBtn=findViewById(R.id.govtSchmes);
         viewImmunizationButton = findViewById(R.id.viewImmunizationButton);
-        phoneVerify = findViewById(R.id.phoneVerifyButton);
+        phoneVerify = findViewById(R.id.goButton);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -195,10 +195,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        phoneVerify.setOnClickListener(new View.OnClickListener() {
+       phoneVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ColourDailyObject.class);
+                Intent intent = new Intent(MainActivity.this,QuizGame.class);
                 startActivity(intent);
             }
         });

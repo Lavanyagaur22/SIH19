@@ -48,6 +48,7 @@
         <activity android:name=".ColourDragDropActivity"/>
         <activity android:name=".FruitDragDropActivity"/>
         <activity android:name=".ColourDailyObject"/>
+        <activity android:name=".QuizGame"/>
 
     </application>
 
