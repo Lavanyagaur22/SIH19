@@ -9,9 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,6 +40,8 @@ public class ColorActivity1 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity1.this, R.raw.airhorn);
                         SoundCorrect.start();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
+                        Intent intent=new Intent(ColorActivity1.this,ColorActivity2.class);
+                        startActivity(intent);
                     }
                 });
                 img2.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +50,8 @@ public class ColorActivity1 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity1.this, R.raw.applause);
                         SoundCorrect.start();
                         databaseReference.child("Correct").setValue(Correct+1);
+                        Intent intent=new Intent(ColorActivity1.this,ColorActivity2.class);
+                        startActivity(intent);
                     }
                 });
             }
@@ -60,8 +62,8 @@ public class ColorActivity1 extends AppCompatActivity {
             }
         });
 
-        Intent intent=new Intent(ColorActivity1.this,ColorActivity2.class);
+      /*  Intent intent=new Intent(ColorActivity1.this,ColorActivity2.class);
         startActivity(intent);
-
+*/
     }
 }

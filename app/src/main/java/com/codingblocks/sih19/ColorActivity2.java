@@ -1,5 +1,6 @@
 package com.codingblocks.sih19;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,7 +26,7 @@ public class ColorActivity2 extends AppCompatActivity {
         setContentView(R.layout.layout_color2);
         final ImageView img1=findViewById(R.id.img1);
         final ImageView img2=findViewById(R.id.img2);
-        final ImageView img3=findViewById(R.id.img3);
+        final ImageView img3=findViewById(R.id.img);
         databaseReference=FirebaseDatabase.getInstance().getReference("CerebralPalsy").child("Personal Details").child("Hr4btxFKRqM05RVElOjSYcqiuaq1").child("Intial Detail").child("ColorGame");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -39,6 +40,8 @@ public class ColorActivity2 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.airhorn);
                         SoundCorrect.start();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
+                        Intent intent = new Intent(ColorActivity2.this,ColorActivity3.class);
+                        startActivity(intent);
                     }
                 });
                 img2.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +50,8 @@ public class ColorActivity2 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.applause);
                         SoundCorrect.start();
                         databaseReference.child("Correct").setValue(Correct+1);
+                        Intent intent = new Intent(ColorActivity2.this,ColorActivity3.class);
+                        startActivity(intent);
                     }
                 });
                 img3.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +60,8 @@ public class ColorActivity2 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.airhorn);
                         SoundCorrect.start();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
+                        Intent intent = new Intent(ColorActivity2.this,ColorActivity3.class);
+                        startActivity(intent);
                     }
                 });
             }
@@ -65,13 +72,13 @@ public class ColorActivity2 extends AppCompatActivity {
             }
         });
 
-        img3.setOnClickListener(new View.OnClickListener() {
+      /*  img3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.airhorn);
                 SoundCorrect.start();
             }
-        });
+        });*/
     }
 
 }

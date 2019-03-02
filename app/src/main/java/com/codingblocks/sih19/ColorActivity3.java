@@ -1,5 +1,6 @@
 package com.codingblocks.sih19;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -40,6 +41,8 @@ public class ColorActivity3 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity3.this, R.raw.airhorn);
                         SoundCorrect.start();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
+                        Intent intent = new Intent(ColorActivity3.this,GamesActivity.class);
+                        startActivity(intent);
                     }
                 });
                 img2.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +51,8 @@ public class ColorActivity3 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity3.this, R.raw.airhorn);
                         SoundCorrect.start();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
+                        Intent intent = new Intent(ColorActivity3.this,GamesActivity.class);
+                        startActivity(intent);
                     }
                 });
                 img3.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +61,8 @@ public class ColorActivity3 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity3.this, R.raw.airhorn);
                         SoundCorrect.start();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
+                        Intent intent = new Intent(ColorActivity3.this,GamesActivity.class);
+                        startActivity(intent);
                     }
                 });
                 img4.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +71,8 @@ public class ColorActivity3 extends AppCompatActivity {
                         SoundCorrect= MediaPlayer.create(ColorActivity3.this, R.raw.applause);
                         SoundCorrect.start();
                         databaseReference.child("Correct").setValue(Correct+1);
+                        Intent intent = new Intent(ColorActivity3.this,GamesActivity.class);
+                        startActivity(intent);
                     }
                 });
             }

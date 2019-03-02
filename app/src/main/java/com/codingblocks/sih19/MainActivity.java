@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference,databaseReference1;
+    DatabaseReference databaseReference,databaseReference1,databaseReference2;
 
     Date dob;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     int count=0;
     String []b;
     LinearLayout breakLL;
+    ImageView games,neraBy,profile;
     TextView viewFullChart,viewMoreImmunization,morePlaces,viewMorePolices,schemeContent;
 
     @Override
@@ -69,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         schemeContent = findViewById(R.id.textView34);
         brekfastBtn = findViewById(R.id.textView23);
         breakLL = findViewById(R.id.breakLL);
+        games = findViewById(R.id.imageView14);
+        neraBy = findViewById(R.id.imageView15);
+        profile = findViewById(R.id.imageView16);
 
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
@@ -78,6 +83,28 @@ public class MainActivity extends AppCompatActivity {
         String currMonth = dateString.substring(3,5);
         String currYear = dateString.substring(6,10);
         age = AgeCalculater.findAge(Integer.parseInt(currDay),Integer.parseInt(currMonth),Integer.parseInt(currYear),12,1,2018);
+
+        games.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,GamesActivity.class);
+                startActivity(intent);
+            }
+        });
+        neraBy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ActivityMapsCurrentPlace.class);
+                startActivity(intent);
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
         viewFullChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -197,7 +224,26 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-        databaseReference1= FirebaseDatabase.getInstance().getReference("CerebralPalsy/GovtSchems/1stScheme/");
+        databaseReference2 = FirebaseDatabase.getInstance().getReference("CerebralPalsy/HelpVideos/YouTube/Cerebral Palsy");
+
+      /*  databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String thumbnail=dataSnapshot.getKey();
+                String description=dataSnapshot.getValue(String.class);
+                ImageView imgthumbnail=findViewById(R.id.videoImageView);
+                TextView descrip=findViewById(R.id.videoDescriptioTextView);
+                descrip.setText(description);
+                Picasso.get().load(thumbnail).into(imgthumbnail);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+*/
+                databaseReference1= FirebaseDatabase.getInstance().getReference("CerebralPalsy/GovtSchems/1stScheme/");
         databaseReference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -1,19 +1,15 @@
 package com.codingblocks.sih19;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TableRow;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,6 +37,7 @@ public class ImmunizationActivity extends AppCompatActivity {
 
     Button level1Button, level2Button, level3Button, level4Button, level5Button, level6Button, level7Button;
     RecyclerView immunizationListView;
+    ImageView backButton;
 
     ImmunizationDetailList immunizationDetailList;
 
@@ -63,6 +60,7 @@ public class ImmunizationActivity extends AppCompatActivity {
         level5Button = findViewById(R.id.level5Button);
         level6Button = findViewById(R.id.level6Button);
         level7Button = findViewById(R.id.level7Button);
+        backButton = findViewById(R.id.backButton);
 
         immunizationListView = findViewById(R.id.immunizationListView);
 
@@ -110,6 +108,12 @@ public class ImmunizationActivity extends AppCompatActivity {
             }
         });
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         level1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

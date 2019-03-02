@@ -56,6 +56,10 @@
         <activity android:name=".ColourDailyObject" />
         <activity android:name=".QuizGame" />
         <activity android:name=".DragLevel1" />
+      <activity android:name=".GamesActivity"/>
+        <activity android:name=".ColorActivity3"/>
+        <activity android:name=".ColorActivity1"/>
+        <activity android:name=".ColorActivity2"/>
     </application>
 
 </manifest>
