@@ -152,14 +152,16 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                             />
 
                             <Button
                                 android:id="@+id/Button5"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                />
 
                             <Button
                                 android:id="@+id/Button4"
@@ -173,8 +175,8 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
-
+                                android:layout_weight="1"
+                               />
                             <Button
                                 android:id="@+id/Button2"
                                 android:layout_width="50dp"
@@ -187,21 +189,22 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
-
+                                android:layout_weight="1"
+                               />
                             <Button
                                 android:id="@+id/Button0"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
-
+                                android:layout_weight="1"
+                              />
                             <Button
                                 android:id="@+id/Button7"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                />
                         </LinearLayout>
                     </HorizontalScrollView>
 
@@ -254,49 +257,22 @@
                         android:textColor="@android:color/white"
                         android:textSize="20dp" />
 
-                    <LinearLayout
+                    <Button
+                        android:id="@+id/textView23"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Time :"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:id="@+id/timeTextView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="12:30 PM"
-                            android:textColor="@color/colorPrimaryDark" />
-                    </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="BreakFast"
+                        android:textColor="@color/black" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
-                        android:orientation="horizontal">
+                        android:id="@+id/breakLL"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView23"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Meal Content :"
-                            android:textColor="@color/black" />
 
-                        <TextView
-                            android:id="@+id/mealContentTextView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="600 Calories"
-                            android:textColor="@color/colorPrimaryDark" />
                     </LinearLayout>
 
                     <TextView
