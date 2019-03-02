@@ -545,8 +545,13 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/feedButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -570,8 +575,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/gameButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -595,8 +605,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nearByButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -620,8 +635,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/profileButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
