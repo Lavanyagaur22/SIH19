@@ -50,8 +50,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,61 +152,56 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background="" />
+                                android:layout_weight="1" />
 
                             <Button
                                 android:id="@+id/Button5"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background="" />
+                                android:layout_weight="1" />
 
                             <Button
                                 android:id="@+id/Button4"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background="" />
+                                android:layout_weight="1" />
 
                             <Button
                                 android:id="@+id/Button3"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background=""/>
+                                android:layout_weight="1" />
 
                             <Button
                                 android:id="@+id/Button2"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background=""/>
+                                android:layout_weight="1" />
+
                             <Button
                                 android:id="@+id/Button1"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background=""/>
+                                android:layout_weight="1" />
+
                             <Button
                                 android:id="@+id/Button0"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background=""/>
+                                android:layout_weight="1" />
+
                             <Button
                                 android:id="@+id/Button7"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1"
-                                android:background=""/>
+                                android:layout_weight="1" />
                         </LinearLayout>
                     </HorizontalScrollView>
 
