@@ -5,42 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<!--
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <android.support.v7.widget.CardView
+        android:id="@+id/toolbar4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:layout_height="56dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="0dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/backArrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="11dp"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/textView40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home Page"
-            android:textColor="@android:color/white"
-            android:textSize="24dp"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/productsansmedium"
+                android:text="Home Page"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/backButton"
+                app:layout_constraintStart_toEndOf="@+id/backButton"
+                app:layout_constraintTop_toTopOf="@+id/backButton"
+                app:layout_constraintVertical_bias="1.0" />
 
-    </android.support.v7.widget.Toolbar>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
 
 
--->
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -50,10 +67,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -153,7 +171,7 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                             />
+                                android:background="@drawable/circularbg" />
 
                             <Button
                                 android:id="@+id/Button5"
@@ -161,14 +179,15 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                />
+                                android:background="@drawable/circularbg" />
 
                             <Button
                                 android:id="@+id/Button4"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:background="@drawable/circularbg" />
 
                             <Button
                                 android:id="@+id/Button3"
@@ -176,13 +195,15 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                               />
+                                android:background="@drawable/circularbg" />
+
                             <Button
                                 android:id="@+id/Button2"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:background="@drawable/circularbg" />
 
                             <Button
                                 android:id="@+id/Button1"
@@ -190,21 +211,23 @@
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                               />
+                                android:background="@drawable/circularbg" />
+
                             <Button
                                 android:id="@+id/Button0"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                              />
+                                android:background="@drawable/circularbg" />
+
                             <Button
                                 android:id="@+id/Button7"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                />
+                                android:background="@drawable/circularbg" />
                         </LinearLayout>
                     </HorizontalScrollView>
 
@@ -374,6 +397,7 @@
                                 android:id="@+id/placeNameTextView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
                                 android:text="Asansol"
                                 android:textColor="@android:color/black"
                                 android:textSize="16dp" />
@@ -383,29 +407,26 @@
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <TextView
-                                    android:id="@+id/textView31"
+                                <ImageView
+                                    android:id="@+id/imageView18"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="4dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="center"
                                     android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:text="Call"
-                                    android:textColor="@color/colorPrimaryDark"
-                                    android:textSize="18dp"
-                                    android:textStyle="bold" />
+                                    app:srcCompat="@drawable/call1" />
 
-                                <TextView
-                                    android:id="@+id/textView32"
+                                <Button
+                                    android:id="@+id/locationBtn2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="4dp"
+                                    android:layout_margin="10dp"
                                     android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:text="Navigate"
-                                    android:textColor="@color/colorPrimaryDark"
-                                    android:textSize="18dp"
-                                    android:textStyle="bold" />
+                                    android:background="@drawable/btn_shape"
+                                    android:padding="10dp"
+                                    android:text="@string/location"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
                             </LinearLayout>
 
                         </LinearLayout>
@@ -531,8 +552,13 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/feedButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -556,8 +582,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/gameButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -581,8 +612,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nearByButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -606,8 +642,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/profileButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
