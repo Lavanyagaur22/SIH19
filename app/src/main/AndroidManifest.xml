@@ -26,13 +26,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD4GjGI7-L3pnpRE2c8mAUYrr6LEyjmQqg" />
 
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".ImmunizationFAQActivity"/>
         <activity android:name=".GovtSchemsActivity" />
         <activity android:name=".GovtDetailActivity" />
@@ -41,7 +35,14 @@
         <activity android:name=".WebViewActivity" />
         <activity android:name=".NGODetailActivity"/>
         <activity android:name=".DietActivity"/>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".InputActivity"/>
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SignupActivity"/>
         <activity android:name=".DranDropGame"/>
         <activity android:name=".NumberDragDropGameActivity"/>

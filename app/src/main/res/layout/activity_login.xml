@@ -117,7 +117,9 @@
         android:fontFamily="@font/productsansbold"
         android:text="@string/New_User_Sign_Up"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="17dp"
+        android:textSize="27dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

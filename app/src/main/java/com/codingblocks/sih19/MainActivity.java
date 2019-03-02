@@ -1,7 +1,9 @@
 package com.codingblocks.sih19;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,12 +35,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, databaseReference1, databaseReference2;
 
-    Date dob;
+    String dob;
 
     DataSnapshot immunizationSnapshot;
     DataSnapshot immuneLevel;
@@ -80,66 +85,133 @@ public class MainActivity extends AppCompatActivity {
 
         immuneList = new ArrayList<>();
 
-        databaseReference = firebaseDatabase.getReference("CerebralPalsy/Immunization");
+        databaseReference1 = firebaseDatabase.getReference("CerebralPalsy/Personal Details/" + firebaseUser.getUid() + "/Initial Detail");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                immunizationSnapshot = dataSnapshot;
+                dob = dataSnapshot.child("DOB").getValue(String.class);
 
-                daysAge = 25;
-                
-                // ToDo: Get the daysAge from DOB
+                final Date currentDate = new Date();
 
-                if (daysAge < 45) {
-                    immuneLevel = immunizationSnapshot.child("0");
-                }
-                else if (daysAge > 45 && daysAge < 75) {
-                    immuneLevel = immunizationSnapshot.child("45");
-                }
-                else if (daysAge > 75 && daysAge < 105) {
-                    immuneLevel = immunizationSnapshot.child("75");
-                }
-                else if (daysAge > 105 && daysAge < 270) {
-                    immuneLevel = immunizationSnapshot.child("105");
-                }
-                else if (daysAge > 270 && daysAge < 480) {
-                    immuneLevel = immunizationSnapshot.child("270");
-                }
-                else if (daysAge > 480 && daysAge < 540) {
-                    immuneLevel = immunizationSnapshot.child("480-540");
-                }
-                else if (daysAge > 1825) {
-                    immuneLevel = immunizationSnapshot.child("1825");
-                }
+                databaseReference = firebaseDatabase.getReference("CerebralPalsy/Immunization");
 
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : immuneLevel.getChildren()) {
-                    immuneList.add(snapshot.getKey());
-                    vaccineCount++;
-                }
+                        databaseReference2 = firebaseDatabase.getReference("CerebralPalsy/Personal Details/" + firebaseUser.getUid() + "/MyImmunization");
 
-                for (int i = 0; i < vaccineCount; i++) {
+                        databaseReference2.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                                // ToDO: Get all immunization
 
-                    TableRow row =new TableRow(MainActivity.this);
-                    row.setId(i);
-                    row.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT));
-                    CheckBox checkBox = new CheckBox(MainActivity.this);
-                    checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            }
 
-                            Toast.makeText(MainActivity.this, "Number of days is hardcoded", Toast.LENGTH_SHORT).show();
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
+                            }
+                        });
+
+                        immunizationSnapshot = dataSnapshot;
+
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                        daysAge = getCountOfDays(dateFormat.format(currentDate),dob);
+
+                        Log.e("DaysAge", daysAge + "");
+
+                        if (daysAge < 45) {
+                            immuneLevel = immunizationSnapshot.child("0");
                         }
-                    });
-                    checkBox.setId(i);
-                    checkBox.setText(immuneList.get(i));
-                    row.addView(checkBox);
-                    immunizationLinearLayout.addView(row);
-                }
+                        else if (daysAge > 45 && daysAge < 75) {
+                            immuneLevel = immunizationSnapshot.child("45");
+                        }
+                        else if (daysAge > 75 && daysAge < 105) {
+                            immuneLevel = immunizationSnapshot.child("75");
+                        }
+                        else if (daysAge > 105 && daysAge < 270) {
+                            immuneLevel = immunizationSnapshot.child("105");
+                        }
+                        else if (daysAge > 270 && daysAge < 480) {
+                            immuneLevel = immunizationSnapshot.child("270");
+                        }
+                        else if (daysAge > 480 && daysAge < 540) {
+                            immuneLevel = immunizationSnapshot.child("480-540");
+                        }
+                        else if (daysAge > 1825) {
+                            immuneLevel = immunizationSnapshot.child("1825");
+                        }
+
+
+                        for (DataSnapshot snapshot : immuneLevel.getChildren()) {
+                            immuneList.add(snapshot.getKey());
+                            vaccineCount++;
+                        }
+
+                        for (int i = 0; i < vaccineCount; i++) {
+
+                            TableRow row =new TableRow(MainActivity.this);
+                            row.setId(i);
+                            row.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT));
+                            final CheckBox checkBox = new CheckBox(MainActivity.this);
+                            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                                @Override
+                                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                                    if (checkBox.isChecked()) {
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                        builder.setMessage("Message");
+                                        builder.setMessage("Are you sure?");
+                                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                                databaseReference2.child(checkBox.getText().toString()).setValue(null);
+
+                                            }
+                                        });
+                                        builder.setNegativeButton("No", null);
+                                        builder.show();
+                                    }
+                                    else {
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                        builder.setMessage("Message");
+                                        builder.setMessage("Are you sure?");
+                                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                                databaseReference2.child(checkBox.getText().toString()).setValue(daysAge);
+
+                                            }
+                                        });
+                                        builder.setNegativeButton("No", null);
+                                        builder.show();
+                                    }
+
+                                }
+                            });
+                            checkBox.setId(i);
+                            checkBox.setText(immuneList.get(i));
+                            row.addView(checkBox);
+                            immunizationLinearLayout.addView(row);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
             }
 
             @Override
@@ -149,25 +221,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        /*databaseReference = firebaseDatabase.getReference("Personal Details/" + firebaseUser.getUid());
-        databaseReference.keepSynced(true);
-
-        databaseReference.child("Initial Detail").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                dob = dataSnapshot.child("DOB").getValue(Date.class);
-
-                // ToDo: Calculate exact age in days
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
 
         viewImmunizationButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
                 String currMonth = dateString.substring(3,5);
                 String currYear = dateString.substring(6,10);
                 String age =  AgeCalculater.findAge(Integer.parseInt(currDay),Integer.parseInt(currMonth),Integer.parseInt(currYear),12,1,2018);
-                Log.e("aggggg",age+"");
+
                 Intent intent = new Intent(MainActivity.this,DietActivity.class);
                 intent.putExtra("Age",age);
                 startActivity(intent);
@@ -215,7 +268,60 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    public int getCountOfDays(String createdDateString, String expireDateString) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        Date createdConvertedDate = null, expireCovertedDate = null, todayWithZeroTime = null;
+        try {
+            createdConvertedDate = dateFormat.parse(createdDateString);
+            expireCovertedDate = dateFormat.parse(expireDateString);
+
+            Date today = new Date();
+
+            todayWithZeroTime = dateFormat.parse(dateFormat.format(today));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        int cYear = 0, cMonth = 0, cDay = 0;
+
+        if (createdConvertedDate.after(todayWithZeroTime)) {
+            Calendar cCal = Calendar.getInstance();
+            cCal.setTime(createdConvertedDate);
+            cYear = cCal.get(Calendar.YEAR);
+            cMonth = cCal.get(Calendar.MONTH);
+            cDay = cCal.get(Calendar.DAY_OF_MONTH);
+
+        } else {
+            Calendar cCal = Calendar.getInstance();
+            cCal.setTime(todayWithZeroTime);
+            cYear = cCal.get(Calendar.YEAR);
+            cMonth = cCal.get(Calendar.MONTH);
+            cDay = cCal.get(Calendar.DAY_OF_MONTH);
+        }
+
+        Calendar eCal = Calendar.getInstance();
+        eCal.setTime(expireCovertedDate);
+
+        int eYear = eCal.get(Calendar.YEAR);
+        int eMonth = eCal.get(Calendar.MONTH);
+        int eDay = eCal.get(Calendar.DAY_OF_MONTH);
+
+        Calendar date1 = Calendar.getInstance();
+        Calendar date2 = Calendar.getInstance();
+
+        date1.clear();
+        date1.set(cYear, cMonth, cDay);
+        date2.clear();
+        date2.set(eYear, eMonth, eDay);
+
+        long diff = date2.getTimeInMillis() - date1.getTimeInMillis();
+
+        float dayCount = (float) diff / (24 * 60 * 60 * 1000);
+
+        return ((int) dayCount);
     }
 
 
