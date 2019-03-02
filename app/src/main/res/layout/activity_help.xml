@@ -1,113 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".ImmunizationActivity">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/roomCardView"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/productsansbold"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:gravity="center"
-        android:shadowColor="@android:color/black"
-        app:cardBackgroundColor="#f5f5f5"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cardVie"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/a"
-            android:fontFamily="@font/productsansmedium"
-            android:textSize="0sp"
-            android:text="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.533"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/level1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="At Birth" />
+
+            <Button
+                android:id="@+id/level2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45 days" />
+
+            <Button
+                android:id="@+id/level3Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="75 days" />
+
+            <Button
+                android:id="@+id/level4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="105 days" />
 
 
-    </android.support.v7.widget.CardView>
+        </LinearLayout>
 
-    <android.support.v7.widget.CardVie
-        android:id="@+id/cardVie"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
+    </HorizontalScrollView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/youListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/productsansbold"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:gravity="center"
-        android:shadowColor="@android:color/black"
-        app:cardBackgroundColor="#f5f5f5"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="243dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/c"
-            android:text = "2"
-            android:fontFamily="@font/productsansmedium"
-            android:textSize="0sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.533"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-
-    </android.support.v7.widget.CardVie>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="95dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/productsansbold"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:gravity="center"
-        android:shadowColor="@android:color/black"
-        app:cardBackgroundColor="#f5f5f5"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roomCardView"
-        tools:layout_editor_absoluteX="148dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/a_img"
-            android:fontFamily="@font/productsansmedium"
-            android:textSize="0sp"
-            android:text="3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.533"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-
-    </android.support.v7.widget.CardView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 </android.support.constraint.ConstraintLayout>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<!--
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -39,6 +40,7 @@
     </android.support.v7.widget.Toolbar>
 
 
+-->
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -48,10 +50,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,44 +145,66 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/imageView6"
+                            <Button
+                                android:id="@+id/Button6"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/blueball" />
+                                android:background="" />
 
-                            <ImageView
-                                android:id="@+id/imageView5"
+                            <Button
+                                android:id="@+id/Button5"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/blueball" />
+                                android:background="" />
 
-                            <ImageView
-                                android:id="@+id/imageView4"
+                            <Button
+                                android:id="@+id/Button4"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/blueball" />
+                                android:background="" />
 
-                            <ImageView
-                                android:id="@+id/imageView3"
+                            <Button
+                                android:id="@+id/Button3"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/blueball" />
+                                android:background=""/>
 
-                            <ImageView
+                            <Button
+                                android:id="@+id/Button2"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_margin="8dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/blueball" />
+                                android:background=""/>
+                            <Button
+                                android:id="@+id/Button1"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:background=""/>
+                            <Button
+                                android:id="@+id/Button0"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:background=""/>
+                            <Button
+                                android:id="@+id/Button7"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:background=""/>
                         </LinearLayout>
                     </HorizontalScrollView>
 

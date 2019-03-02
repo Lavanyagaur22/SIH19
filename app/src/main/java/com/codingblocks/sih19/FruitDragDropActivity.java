@@ -89,7 +89,7 @@ public class FruitDragDropActivity extends AppCompatActivity implements View.OnT
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_number_darg_drop);
+            setContentView(R.layout.activity_fruit_drag_drop);
 
             text1 = (TextView)findViewById(R.id.textView1);
             text2 = (TextView)findViewById(R.id.textView2);

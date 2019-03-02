@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -74,32 +75,16 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
         level3Button = findViewById(R.id.level3Button);
         level4Button = findViewById(R.id.level4Button);
 
-       // youTubeRecyclerView = findViewById(R.id.youtubeRecyclerView);
+        youTubeRecyclerView = findViewById(R.id.youListView);
 
         databaseReference = firebaseDatabase.getReference("CerebralPalsy/HelpVideos/YouTube");
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 immunizationSnapshot = dataSnapshot;
-
-                youTubeIDList.clear();
-                descriptionList.clear();
-
-
-                for (DataSnapshot snapshot : dataSnapshot.child("YouTube").getChildren()) {
-
-                    String id = snapshot.getKey();
-                    String description = snapshot.getValue(String.class);
-
-
-                }
-
-                youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
-                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
-                youTubeRecyclerView.setLayoutManager(layoutManager);
-                youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                youTubeRecyclerView.setAdapter(youTubeDetailList);
             }
 
             @Override
@@ -108,111 +93,112 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
             }
         });
 
+        level1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                level1Button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
 
-                        immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
+               youTubeIDList.clear();
+               descriptionList.clear();
 
-                        immuneList.clear();
+                for (DataSnapshot snapshot : immuneLevel.getChildren()) {
+                    youTubeIDList.add(snapshot.getKey());
+                    descriptionList.add(snapshot.getValue(String.class));
+                    Log.e("teadd",snapshot.getKey()+snapshot.getValue(String.class));
+                }
 
-                        for (DataSnapshot snapshot : immuneLevel.getChildren()) {
-                            youTubeIDList.add(snapshot.getKey());
-                            descriptionList.add(snapshot.getValue(String.class));
-                        }
-
-                        youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
-                        youTubeRecyclerView.setLayoutManager(layoutManager);
-                        youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                        youTubeRecyclerView.setAdapter(immunizationDetailList);
-                        youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(),R.anim.layout_fall_down));
-
-
-                    }
-                });
-
-                level2Button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
-
-                        immuneList.clear();
-
-                        for (DataSnapshot snapshot : immuneLevel.getChildren()) {
-                            youTubeIDList.add(snapshot.getKey());
-                            descriptionList.add(snapshot.getValue(String.class));
-                        }
-
-                        youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
-                        youTubeRecyclerView.setLayoutManager(layoutManager);
-                        youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                        youTubeRecyclerView.setAdapter(immunizationDetailList);
-                        youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(),R.anim.layout_fall_down));
-
-                    }
-                });
-
-                level3Button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
-
-                        immuneList.clear();
-
-                        for (DataSnapshot snapshot : immuneLevel.getChildren()) {
-                            youTubeIDList.add(snapshot.getKey());
-                            descriptionList.add(snapshot.getValue(String.class));
-                        }
-
-                        youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
-                        youTubeRecyclerView.setLayoutManager(layoutManager);
-                        youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                        youTubeRecyclerView.setAdapter(immunizationDetailList);
-                        youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(),R.anim.layout_fall_down));
+                youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
+                youTubeRecyclerView.setLayoutManager(layoutManager);
+                youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
 
 
-                    }
-                });
+            }
+        });
 
-                level4Button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
-
-                        immuneList.clear();
-
-                        for (DataSnapshot snapshot : immuneLevel.getChildren()) {
-                            youTubeIDList.add(snapshot.getKey());
-                            descriptionList.add(snapshot.getValue(String.class));
-                        }
-
-                        youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
-                        youTubeRecyclerView.setLayoutManager(layoutManager);
-                        youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                        youTubeRecyclerView.setAdapter(immunizationDetailList);
-                        youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(),R.anim.layout_fall_down));
+        level2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
 
-                    }
-                });
+                immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
+
+                youTubeIDList.clear();
+                descriptionList.clear();
 
 
+                for (DataSnapshot snapshot : immuneLevel.getChildren()) {
+                    youTubeIDList.add(snapshot.getKey());
+                    descriptionList.add(snapshot.getValue(String.class));
+                }
 
-                backButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               finish();
-           }
-       });
+                youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
+                youTubeRecyclerView.setLayoutManager(layoutManager);
+                youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
+
+            }
+        });
+
+        level3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
+
+                youTubeIDList.clear();
+                descriptionList.clear();
+
+
+                for (DataSnapshot snapshot : immuneLevel.getChildren()) {
+                    youTubeIDList.add(snapshot.getKey());
+                    descriptionList.add(snapshot.getValue(String.class));
+                }
+
+                youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
+                youTubeRecyclerView.setLayoutManager(layoutManager);
+                youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
+
+
+            }
+        });
+
+        level4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
+
+                immuneList.clear();
+
+                for (DataSnapshot snapshot : immuneLevel.getChildren()) {
+                    youTubeIDList.add(snapshot.getKey());
+                    descriptionList.add(snapshot.getValue(String.class));
+                }
+
+                youTubeDetailList = new YouTubeDetailList(youTubeIDList, descriptionList, HelpActivity.this);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
+                youTubeRecyclerView.setLayoutManager(layoutManager);
+                youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
+
+
+            }
+        });
+
+
     }
+
+
 
     @Override
     public void onBackPressed() {
