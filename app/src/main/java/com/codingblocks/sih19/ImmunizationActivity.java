@@ -102,8 +102,6 @@ public class ImmunizationActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : immuneLevel.getChildren()) {
                     immuneList.add(snapshot.getKey());
                 }
-
-
             }
 
             @Override
@@ -124,7 +122,7 @@ public class ImmunizationActivity extends AppCompatActivity {
                     immuneList.add(snapshot.getKey());
                 }
 
-                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, ImmunizationActivity.this);
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, "0", ImmunizationActivity.this);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
                 immunizationListView.setLayoutManager(layoutManager);
                 immunizationListView.setItemAnimator(new DefaultItemAnimator());
@@ -147,7 +145,7 @@ public class ImmunizationActivity extends AppCompatActivity {
                     immuneList.add(snapshot.getKey());
                 }
 
-                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, ImmunizationActivity.this);
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, "45", ImmunizationActivity.this);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
                 immunizationListView.setLayoutManager(layoutManager);
                 immunizationListView.setItemAnimator(new DefaultItemAnimator());
@@ -170,7 +168,7 @@ public class ImmunizationActivity extends AppCompatActivity {
                     immuneList.add(snapshot.getKey());
                 }
 
-                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, ImmunizationActivity.this);
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, "75", ImmunizationActivity.this);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
                 immunizationListView.setLayoutManager(layoutManager);
                 immunizationListView.setItemAnimator(new DefaultItemAnimator());
@@ -193,7 +191,7 @@ public class ImmunizationActivity extends AppCompatActivity {
                     immuneList.add(snapshot.getKey());
                 }
 
-                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, ImmunizationActivity.this);
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, "105", ImmunizationActivity.this);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
                 immunizationListView.setLayoutManager(layoutManager);
                 immunizationListView.setItemAnimator(new DefaultItemAnimator());
@@ -216,7 +214,7 @@ public class ImmunizationActivity extends AppCompatActivity {
                     immuneList.add(snapshot.getKey());
                 }
 
-                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, ImmunizationActivity.this);
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, "270", ImmunizationActivity.this);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
                 immunizationListView.setLayoutManager(layoutManager);
                 immunizationListView.setItemAnimator(new DefaultItemAnimator());
@@ -238,7 +236,7 @@ public class ImmunizationActivity extends AppCompatActivity {
                     immuneList.add(snapshot.getKey());
                 }
 
-                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, ImmunizationActivity.this);
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, "480-540", ImmunizationActivity.this);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
                 immunizationListView.setLayoutManager(layoutManager);
                 immunizationListView.setItemAnimator(new DefaultItemAnimator());
@@ -261,7 +259,7 @@ public class ImmunizationActivity extends AppCompatActivity {
                     immuneList.add(snapshot.getKey());
                 }
 
-                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, ImmunizationActivity.this);
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, "1825", ImmunizationActivity.this);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
                 immunizationListView.setLayoutManager(layoutManager);
                 immunizationListView.setItemAnimator(new DefaultItemAnimator());
