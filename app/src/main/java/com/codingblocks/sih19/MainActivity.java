@@ -203,7 +203,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btngraph=findViewById(R.id.btnGraph);
+        btngraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,DranDropGame.class);
+                startActivity(intent);
+            }
+        });
 
+        Button btnFlashcard=findViewById(R.id.btnFlashcard);
+        btnFlashcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,DranDropGame.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

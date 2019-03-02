@@ -41,6 +41,7 @@
         <activity android:name=".WebViewActivity" />
         <activity android:name=".NGODetailActivity"/>
         <activity android:name=".DietActivity"/>
+        <activity android:name=".FlashcardActivity"></activity>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SignupActivity"/>
         <activity android:name=".DranDropGame"/>
