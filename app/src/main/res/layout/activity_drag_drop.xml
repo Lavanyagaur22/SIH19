@@ -1,67 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context="MainActivity">
 
     <TextView
+        android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
         android:text="Match the following"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="25sp"
-        android:padding="10dp"/>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@android:color/holo_blue_dark"
-        android:text="1"
-        android:textSize="35sp" />
-    <TextView
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/survey_rate_selected"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/survey_rate_selected"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/black"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/survey_rate_selected"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/black"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2"
-        android:layout_margin="10dp"
-        android:textSize="35sp"
-        android:id="@+id/text2"
-        android:background="@android:color/holo_blue_dark"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="3"
-        android:layout_margin="10dp"
-        android:textSize="35sp"
-        android:id="@+id/text3"
-        android:background="@android:color/holo_blue_dark"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="One"
-        android:layout_margin="10dp"
-        android:textSize="35sp"
-        android:id="@+id/text4"
-        android:background="@android:color/holo_orange_light"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Two"
-        android:layout_margin="10dp"
-        android:textSize="35sp"
-        android:id="@+id/text5"
-        android:background="@android:color/holo_orange_light"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Three"
-        android:layout_margin="10dp"
-        android:textSize="35sp"
-        android:id="@+id/text6"
-        android:background="@android:color/holo_orange_light"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/ib_fr_add_comment_error"
+            android:gravity="center"
+            android:text="One"
+            android:textColor="@android:color/white"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/ib_fr_add_comment_error"
+            android:gravity="center"
+            android:text="Two"
+            android:textColor="@android:color/white"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/ib_fr_add_comment_error"
+            android:gravity="center"
+            android:text="Three"
+            android:textColor="@android:color/white"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

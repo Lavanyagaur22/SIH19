@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <com.wajahatkarim3.easyflipview.EasyFlipView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/flipView"
+       app:flipOnTouch="true"
+       app:flipDuration="500"
+       app:flipEnabled="true"
+       android:layout_centerInParent="true">
+
+       <ImageView
+           android:layout_width="200dp"
+           android:layout_height="200dp"
+           android:layout_gravity="center"
+           android:id="@+id/imgFront" />
+       <ImageView
+           android:layout_width="200dp"
+           android:layout_height="200dp"
+           android:layout_gravity="center"
+           android:id="@+id/imgBack" />
+   </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_next"
+        android:id="@+id/btnNextFlashcard"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"/>
+
+</RelativeLayout>

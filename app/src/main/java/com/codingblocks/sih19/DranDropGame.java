@@ -29,15 +29,19 @@ public class DranDropGame extends AppCompatActivity implements View.OnTouchListe
 
                 if(options.equals("1")&&text.equals("One"))
                 {
+                    text4.setOnDragListener(this);
                     Toast.makeText(this, "1 one", Toast.LENGTH_SHORT).show();
                     Log.e("TAG","INSIDE 1");
                 }
                 else if (options.equals("2")&&text.equals("Two")){
+                    text5.setOnDragListener(this);
                     Toast.makeText(this, "2 two ", Toast.LENGTH_SHORT).show();
+
                     Log.e("TAG"," INSIDE 2");
                 }
                 else if(options.equals("3")&&text.equals("Three"))
                 {
+                    text6.setOnDragListener(this);
                     Toast.makeText(this, "3 three", Toast.LENGTH_SHORT).show();
                     Log.e("TAG","INSIDE 2");
                 }
