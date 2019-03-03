@@ -37,6 +37,7 @@ public class GovtDetailActivity  extends AppCompatActivity {
 
            for(String s : detail_content){
             final TextView rowTextView = new TextView(this);
+            rowTextView.setTextSize(12);
             rowTextView.setText("*  " +s);
             linearLayout.addView(rowTextView);
             myTextViews[count] = rowTextView;

@@ -65,4 +65,11 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
     implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+    implementation 'com.github.imangazalievm:circlemenu:1.0.3'
+    implementation 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.2'
+
+
+
 }

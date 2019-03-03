@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -29,12 +28,14 @@
                 android:id="@+id/nameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/name" />
+                android:text="@string/name"
+                android:textSize="22sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="118dp"
+                android:layout_height="80dp"
                 android:weightSum="3"
+               android:layout_margin="20sp"
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -78,7 +79,8 @@
                 android:id="@+id/readmoreTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/read_more" />
+                android:text="@string/read_more"
+                android:layout_marginStart="150sp"/>
 
 
         </LinearLayout>

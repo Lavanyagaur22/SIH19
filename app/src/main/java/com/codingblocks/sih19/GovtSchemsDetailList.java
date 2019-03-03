@@ -2,6 +2,7 @@ package com.codingblocks.sih19;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +62,15 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
              context.startActivity(intent);
             }
         });
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, GovtDetailActivity.class);
+                intent.putExtra(R.string.detail_content+"",detailContent);
+                intent.putExtra("Name",name);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -74,6 +84,7 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
 
         public TextView  nameTV,contentTV,readmoreTV;
          ImageView schemeImage;
+         CardView cardView ;
 
         public MyHolder(View itemView) {
             super(itemView);
@@ -81,6 +92,7 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
              contentTV = itemView.findViewById(R.id.contentTextView);
              readmoreTV=itemView.findViewById(R.id.readmoreTextView);
              schemeImage=itemView.findViewById(R.id.circleImageView);
+             cardView = itemView.findViewById(R.id.cardView);
         }
     }
 
