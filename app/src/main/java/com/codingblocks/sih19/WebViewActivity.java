@@ -20,6 +20,10 @@ public class WebViewActivity extends AppCompatActivity {
         {
             url = intent.getStringExtra("web");
         }
+        if(intent.hasExtra("databank"))
+        {
+            url = intent.getStringExtra("databank");
+        }
         else
         {
             url = "http://thenationaltrust.gov.in/content/innerpage/schemes.php";
