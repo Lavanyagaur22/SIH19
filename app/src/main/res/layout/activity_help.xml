@@ -25,25 +25,25 @@
                 android:id="@+id/level1Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="At Birth" />
+                android:text="Cerebral Palsy" />
 
             <Button
                 android:id="@+id/level2Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="45 days" />
+                android:text="Govt act" />
 
             <Button
                 android:id="@+id/level3Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="75 days" />
+                android:text="NGOs" />
 
             <Button
                 android:id="@+id/level4Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="105 days" />
+                android:text="Stories that inspire" />
 
 
         </LinearLayout>

@@ -1,7 +1,7 @@
 package com.codingblocks.sih19;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,8 +24,8 @@ public class ProfileActivity extends AppCompatActivity {
         age.setText("1 year");
         //weight=7.8 and ht=71.3
         bmi.setText("15.3");
-      //  ImageView imgbmigraph=findViewById(R.id.bmiGraphViewPager);
-      //  imgbmigraph.setImageResource(R.drawable.bmi_curve);
+        ImageView imgbmigraph=findViewById(R.id.bmiGraphViewPager);
+        imgbmigraph.setImageResource(R.drawable.bmi_curve);
 
     }
 }

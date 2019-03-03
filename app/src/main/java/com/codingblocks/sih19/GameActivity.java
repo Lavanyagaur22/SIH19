@@ -1,36 +1,78 @@
 package com.codingblocks.sih19;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.ImageView;
 
 public class GameActivity extends AppCompatActivity {
 
+    ImageView dragDrop,colourchange,quiz,object,pitchure,match,backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        LinearLayout linearLayout=findViewById(R.id.linearLayout25);
-        linearLayout .setOnClickListener(new View.OnClickListener() {
+
+        dragDrop = findViewById(R.id.imageView9);
+
+        colourchange = findViewById(R.id.imageView2);
+        object = findViewById(R.id.imageView8);
+        quiz = findViewById(R.id.imageView12);
+        match = findViewById(R.id.imageView10);
+        pitchure = findViewById(R.id.imageView);
+        backButton = findViewById(R.id.backButton);
+        dragDrop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(GameActivity.this,VoiceTherapy.class);
+                Intent intent = new Intent(GameActivity.this,DragLevel1.class);
                 startActivity(intent);
             }
         });
-        CardView game1=findViewById(R.id.cardView2);
-        game1.setOnClickListener(new View.OnClickListener() {
+        colourchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Intent intent=new Intent(GamesActivity.this,)
+                Intent intent = new Intent(GameActivity.this,ColorActivity1.class);
+                startActivity(intent);
             }
         });
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GameActivity.this,QuizGame.class);
+                startActivity(intent);
+            }
+        });
+        object.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GameActivity.this,ColourDailyObject.class);
+                startActivity(intent);
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        match.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GameActivity.this,DragDropLevel2.class);
+                startActivity(intent);
+            }
+        });
+        pitchure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GameActivity.this,FruitDragDropActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
 
     }
 }

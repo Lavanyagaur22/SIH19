@@ -10,10 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -61,20 +59,22 @@ public class ColorActivity1 extends AppCompatActivity {
                 img1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        SoundCorrect= MediaPlayer.create(ColorActivity1.this, R.raw.airhorn);
+                        SoundCorrect= MediaPlayer.create(ColorActivity1.this, R.raw.buzzerwronganswer);
                         SoundCorrect.start();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
                         Intent intent=new Intent(ColorActivity1.this,ColorActivity2.class);
+                        Toast.makeText(ColorActivity1.this,"Incorrect",Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                     }
                 });
                 img2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        SoundCorrect= MediaPlayer.create(ColorActivity1.this, R.raw.applause);
+                        SoundCorrect= MediaPlayer.create(ColorActivity1.this, R.raw.rightanswersoundeffect);
                         SoundCorrect.start();
                         databaseReference.child("Correct").setValue(Correct+1);
                         Intent intent=new Intent(ColorActivity1.this,ColorActivity2.class);
+                        Toast.makeText(ColorActivity1.this,"Correct",Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                     }
                 });

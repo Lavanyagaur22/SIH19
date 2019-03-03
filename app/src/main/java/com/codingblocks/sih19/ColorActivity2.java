@@ -1,6 +1,5 @@
 package com.codingblocks.sih19;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,31 +37,31 @@ public class ColorActivity2 extends AppCompatActivity {
                 img1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.airhorn);
+                        SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.buzzerwronganswer);
                         SoundCorrect.start();
+                        Toast.makeText(ColorActivity2.this,"Incorrect",Toast.LENGTH_SHORT).show();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
-                        Intent intent = new Intent(ColorActivity2.this,ColorActivity3.class);
-                        startActivity(intent);
+
                     }
                 });
                 img2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.applause);
+                        SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.rightanswersoundeffect);
                         SoundCorrect.start();
+                        Toast.makeText(ColorActivity2.this,"Correct",Toast.LENGTH_SHORT).show();
                         databaseReference.child("Correct").setValue(Correct+1);
-                        Intent intent = new Intent(ColorActivity2.this,ColorActivity3.class);
-                        startActivity(intent);
+
                     }
                 });
                 img3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.airhorn);
+                        SoundCorrect= MediaPlayer.create(ColorActivity2.this, R.raw.buzzerwronganswer);
                         SoundCorrect.start();
+                        Toast.makeText(ColorActivity2.this,"Incorrect",Toast.LENGTH_SHORT).show();
                         databaseReference.child("Incorrect").setValue(Incorrect+1);
-                        Intent intent = new Intent(ColorActivity2.this,ColorActivity3.class);
-                        startActivity(intent);
+
                     }
                 });
             }

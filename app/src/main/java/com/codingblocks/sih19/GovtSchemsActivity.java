@@ -27,7 +27,7 @@ public class GovtSchemsActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GovtSchemsActivity.this, MainActivity.class));
+                startActivity(new Intent(GovtSchemsActivity.this, MainActivity1.class));
                 finish();
             }
         });
@@ -45,7 +45,7 @@ public class GovtSchemsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(GovtSchemsActivity.this, MainActivity.class));
+        startActivity(new Intent(GovtSchemsActivity.this, MainActivity1.class));
         finish();
     }
 

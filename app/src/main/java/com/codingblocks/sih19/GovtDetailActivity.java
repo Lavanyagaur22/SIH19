@@ -30,7 +30,7 @@ public class GovtDetailActivity  extends AppCompatActivity {
 
         Intent intent1 = getIntent();
         name = intent1.getStringExtra("Name");
-        detailContent = intent1.getStringExtra(R.string.detail_content+"");
+        detailContent = intent1.getStringExtra("detail content");
         detail_content = detailContent.split("\\$");
         final TextView[] myTextViews = new TextView[detail_content.length];
 

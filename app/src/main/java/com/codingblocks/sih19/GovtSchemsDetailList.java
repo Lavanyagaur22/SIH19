@@ -50,14 +50,14 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
 
         holder.nameTV.setText(govtDetailClass.getName());
         holder.contentTV.setText(govtDetailClass.getContent());
-         detailContent = govtDetailClass.getDetail();
+        detailContent = govtDetailClass.getDetail();
         name = govtDetailClass.getName();
 
         holder.readmoreTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
              Intent intent = new Intent(context, GovtDetailActivity.class);
-             intent.putExtra(R.string.detail_content+"",detailContent);
+             intent.putExtra("detail content",detailContent);
              intent.putExtra("Name",name);
              context.startActivity(intent);
             }
@@ -66,7 +66,7 @@ public class GovtSchemsDetailList extends RecyclerView.Adapter<GovtSchemsDetailL
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, GovtDetailActivity.class);
-                intent.putExtra(R.string.detail_content+"",detailContent);
+                intent.putExtra("detail content",detailContent);
                 intent.putExtra("Name",name);
                 context.startActivity(intent);
             }

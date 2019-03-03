@@ -78,7 +78,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
         youTubeRecyclerView = findViewById(R.id.youListView);
 
         databaseReference = firebaseDatabase.getReference("CerebralPalsy/HelpVideos/YouTube");
-
+        databaseReference.keepSynced(true);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -99,8 +99,8 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
 
                 immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
 
-               youTubeIDList.clear();
-               descriptionList.clear();
+                youTubeIDList.clear();
+                descriptionList.clear();
 
                 for (DataSnapshot snapshot : immuneLevel.getChildren()) {
                     youTubeIDList.add(snapshot.getKey());

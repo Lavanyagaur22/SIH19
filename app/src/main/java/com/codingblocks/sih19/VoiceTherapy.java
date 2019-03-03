@@ -1,14 +1,10 @@
 package com.codingblocks.sih19;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
-import android.speech.tts.UtteranceProgressListener;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +33,7 @@ public class VoiceTherapy extends AppCompatActivity implements TextToSpeech.OnIn
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.layout_voice_therapy);
 
             txtText = findViewById(R.id.txtText);
             startButton = findViewById(R.id.startButton);

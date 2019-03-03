@@ -1,3 +1,4 @@
+/*
 package com.codingblocks.sih19;
 
 import android.Manifest;
@@ -222,9 +223,11 @@ public class MainActivity extends AppCompatActivity {
                  cameraRB = viewDialog.findViewById(R.id.radioCamera);
                 galleryRB = findViewById(R.id.radioGallery);
 
-                /*final View titleView = inflater.inflate(R.layout.custom_titleroom, null);
+                */
+/*final View titleView = inflater.inflate(R.layout.custom_titleroom, null);
                 custom_title = titleView.findViewById(R.id.roomCustomTitle);
-*/
+*//*
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setIcon(getResources().getDrawable(R.drawable.add_circle));
                 builder.setIcon(R.drawable.add_circle);
@@ -813,3 +816,4 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
+*/

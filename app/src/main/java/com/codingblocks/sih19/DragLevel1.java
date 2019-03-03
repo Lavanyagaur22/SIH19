@@ -1,5 +1,6 @@
 package com.codingblocks.sih19;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -59,6 +60,8 @@ public class DragLevel1 extends AppCompatActivity implements View.OnTouchListene
 
                         dropTarget.setText(dropped.getText());
                         dropTarget.setBackgroundColor(R.drawable.a_img);
+                        Intent intent = new Intent(DragLevel1.this,DragDropLevel2.class);
+                        startActivity(intent);
                     }
                     else{
 
@@ -66,7 +69,9 @@ public class DragLevel1 extends AppCompatActivity implements View.OnTouchListene
                         databaseReference.child("Incorrect").setValue(incorrect);
                         Toast.makeText(DragLevel1.this, "Incorrect", Toast.LENGTH_SHORT).show();
                         Log.e("TAG","else");
-                        dropTarget.setBackgroundColor(R.drawable.r);
+                        dropTarget.setBackgroundColor(R.drawable.b);
+                        Intent intent = new Intent(DragLevel1.this,DragDropLevel2.class);
+                        startActivity(intent);
                     }
                 }
 
