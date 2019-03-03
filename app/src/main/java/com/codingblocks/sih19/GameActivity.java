@@ -25,7 +25,7 @@ public class GameActivity extends AppCompatActivity {
         dragDrop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GameActivity.this,DragLevel1.class);
+                Intent intent = new Intent(GameActivity.this,DragDropLevel2.class);
                 startActivity(intent);
             }
         });
@@ -59,7 +59,7 @@ public class GameActivity extends AppCompatActivity {
         match.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GameActivity.this,DragDropLevel2.class);
+                Intent intent = new Intent(GameActivity.this,NumberDragDropGameActivity.class);
                 startActivity(intent);
             }
         });

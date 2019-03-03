@@ -1,5 +1,6 @@
 package com.codingblocks.sih19;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
@@ -62,6 +63,7 @@ public class DragDropLevel2 extends AppCompatActivity implements View.OnTouchLis
 
                         dropTarget.setText(dropped.getText());
                         dropTarget.setBackgroundColor(R.drawable.a_img);
+                        startActivity(new Intent(DragDropLevel2.this,ColourDragDropActivity.class));
                     }
                     else if(options.equals("3")&&text.equals("2")){
                         correct = correct+1;
@@ -71,6 +73,8 @@ public class DragDropLevel2 extends AppCompatActivity implements View.OnTouchLis
 
                         dropTarget.setText(dropped.getText());
                         dropTarget.setBackgroundColor(R.drawable.a_img);
+                        startActivity(new Intent(DragDropLevel2.this,ColourDragDropActivity.class));
+
                     }
 
                     else{
@@ -80,6 +84,8 @@ public class DragDropLevel2 extends AppCompatActivity implements View.OnTouchLis
                         Toast.makeText(DragDropLevel2.this, "Incorrect", Toast.LENGTH_SHORT).show();
                         Log.e("TAG","else");
                         dropTarget.setBackgroundColor(R.drawable.r);
+                        startActivity(new Intent(DragDropLevel2.this,ColourDragDropActivity.class));
+
                     }
                 }
 

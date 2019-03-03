@@ -21,7 +21,7 @@ public class ProfileActivity extends AppCompatActivity {
         bmi=findViewById(R.id.BMITextView);
         dbref= FirebaseDatabase.getInstance().getReference();
         tvNameOfChild.setText("Aanya");
-        age.setText("1 year");
+        age.setText("2 year");
         //weight=7.8 and ht=71.3
         bmi.setText("15.3");
         ImageView imgbmigraph=findViewById(R.id.bmiGraphViewPager);

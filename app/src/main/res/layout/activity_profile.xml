@@ -179,64 +179,81 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <Button
+                <TextView
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Game"
+                    android:background="@drawable/btn_shape"
+                    android:text="       Immunization    =       3/7"
                     android:textColor="@android:color/white"
-                    android:textSize="20dp"
+                    android:textSize="25dp"
                     android:textStyle="bold" />
 
-                <Button
+                <TextView
                     android:id="@+id/button"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50sp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Vision"
+                    android:background="@drawable/btn_shape"
+                    android:text="       Maths Quiz        =     12/34"
                     android:textColor="@android:color/white"
-                    android:textSize="20dp"
+                    android:textSize="25dp"
                     android:textStyle="bold" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:orientation="horizontal">
 
-                <Button
+                <TextView
                     android:id="@+id/button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Voice"
+                    android:background="@drawable/btn_shape"
+                    android:text="        Vision Game     =     12/23"
                     android:textColor="@android:color/white"
-                    android:textSize="20dp"
+                    android:textSize="25dp"
                     android:textStyle="bold" />
 
-                <Button
+                <TextView
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Match"
+                    android:background="@drawable/btn_shape"
+                    android:text="       Matching            =       3/5"
                     android:textColor="@android:color/white"
-                    android:textSize="20dp"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_shape"
+                    android:text=" Muscular Game      =               3/5"
+                    android:textColor="@android:color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_shape"
+                    android:text=" picture game      =              2/5"
+                    android:textColor="@android:color/white"
+                    android:textSize="25dp"
                     android:textStyle="bold" />
             </LinearLayout>
-
         </LinearLayout>
+
+
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
