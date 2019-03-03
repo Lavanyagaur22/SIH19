@@ -79,7 +79,7 @@ public class InputActivity extends AppCompatActivity {
                 calendar.set(Calendar.MONTH, i1);
                 calendar.set(Calendar.DAY_OF_MONTH, i2);
 
-                String myFormat = "dd/MM/yy";
+                String myFormat = "dd/MM/yyyy";
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
                 DobET.setText(sdf.format(calendar.getTime()));
 
@@ -124,18 +124,7 @@ public class InputActivity extends AppCompatActivity {
                                         databaseReference.child("Initial Detail").setValue(intialClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
-
-                                            }
-                                        });
-
-                                        Date date = new Date();
-                                        String key = databaseReference.getKey();
-                                        UpdatedClass updatedClass = new UpdatedClass(key, heightEt.getText().toString(), weightEt.getText().toString(), date);
-
-                                        databaseReference.child("updated detail").setValue(updatedClass).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-
+                                                startActivity(new Intent(InputActivity.this, MainActivity.class));
                                             }
                                         });
 

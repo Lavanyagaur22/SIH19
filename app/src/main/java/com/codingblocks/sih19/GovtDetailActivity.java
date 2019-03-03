@@ -34,7 +34,6 @@ public class GovtDetailActivity  extends AppCompatActivity {
         detail_content = detailContent.split("\\$");
         final TextView[] myTextViews = new TextView[detail_content.length];
 
-
            for(String s : detail_content){
             final TextView rowTextView = new TextView(this);
             rowTextView.setTextSize(12);

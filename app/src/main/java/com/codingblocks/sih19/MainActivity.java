@@ -19,6 +19,8 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,14 +52,18 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
-
-import id.zelory.compressor.Compressor;
-
-import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,19 +74,16 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference,databaseReference1,databaseReference2;
+    DatabaseReference databaseReference, databaseReference1, databaseReference2;
 
-    Date dob;
+    String dob;
 
     DataSnapshot immunizationSnapshot;
     DataSnapshot immuneLevel;
 
     int daysAge, vaccineCount;
-    RadioGroup radioGroup;
-    RadioButton cameraRB,galleryRB;
 
-
-    ArrayList<String> immuneList;
+    ArrayList<String> immuneList, myImmuneList;
     String age ,year,month,day,child,brekFast;
 
     Button btn, viewImmunizationButton , phoneVerify,brekfastBtn;
@@ -107,8 +110,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_main);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        myImmuneList = new ArrayList<>();
+
+        CardView cardView=findViewById(R.id.profileInfoCardView);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,BMIGraphActivity.class);
+                startActivity(intent);
+            }
+        });
         immunizationLinearLayout = findViewById(R.id.immunizationLinearLayout);
         phoneVerify = findViewById(R.id.goButton);
         viewFullChart = findViewById(R.id.viewFullChartButton);
@@ -172,6 +190,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ActivityMapsCurrentPlace.class);
                 startActivity(intent);
+            }
+        });
+
+        LinearLayout linearLayout2=findViewById(R.id.gameButton);
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,GameActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout linearLayout=findViewById(R.id.profileButton);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.edvard.poseestimation");
+                if (launchIntent != null) {
+                    startActivity(launchIntent);//null pointer check in case package name was not found
+                }
             }
         });
 
@@ -316,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             if(dataSnapshot.hasChild(child)) {
                                 brekFast = snapshot.child("Breakfast").getValue(String.class);
-                                       }
+                            }
 
                         }
                     }
@@ -359,6 +397,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        databaseReference = firebaseDatabase.getReference("CerebralPalsy/Personal Details/" + firebaseUser.getUid());
+        databaseReference.keepSynced(true);
+        databaseReference.child("Initial Detail").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                dob = dataSnapshot.child("dateOfBirth").getValue(String.class);
+
+                databaseReference.child("MyImmunization").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        immuneList = new ArrayList<>();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 
@@ -366,6 +418,17 @@ public class MainActivity extends AppCompatActivity {
 
         immuneList = new ArrayList<>();
 
+                        myImmuneList.clear();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                            myImmuneList.add(snapshot.getKey());
+                        }
+
+                        databaseReference = firebaseDatabase.getReference("CerebralPalsy/Immunization");
+                        databaseReference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
         databaseReference = firebaseDatabase.getReference("CerebralPalsy/Immunization");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -374,8 +437,34 @@ public class MainActivity extends AppCompatActivity {
 
                 immunizationSnapshot = dataSnapshot;
 
+                                Date currentDate = new Date();
+
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                                daysAge = getCountOfDays(dob, dateFormat.format(currentDate));
+
+                                if (daysAge < 45) {
+                                    immuneLevel = immunizationSnapshot.child("0");
+                                }
+                                else if (daysAge > 45 && daysAge < 75) {
+                                    immuneLevel = immunizationSnapshot.child("45");
+                                }
+                                else if (daysAge > 75 && daysAge < 105) {
+                                    immuneLevel = immunizationSnapshot.child("75");
+                                }
+                                else if (daysAge > 105 && daysAge < 270) {
+                                    immuneLevel = immunizationSnapshot.child("105");
+                                }
+                                else if (daysAge > 270 && daysAge < 480) {
+                                    immuneLevel = immunizationSnapshot.child("270");
+                                }
+                                else if (daysAge > 480 && daysAge < 540) {
+                                    immuneLevel = immunizationSnapshot.child("480-540");
+                                }
+                                else if (daysAge > 1825) {
+                                    immuneLevel = immunizationSnapshot.child("1825");
+                                }
                 daysAge = 25;
-                
+
                 // ToDo: Get the daysAge from DOB
 
                 if (daysAge < 45) {
@@ -408,6 +497,17 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int i = 0; i < vaccineCount; i++) {
 
+                                    TableRow row =new TableRow(MainActivity.this);
+                                    row.setId(i);
+                                    row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                                    final CheckBox checkBox = new CheckBox(MainActivity.this);
+                                    if (myImmuneList.contains(immuneList.get(i))) {
+                                        checkBox.setChecked(true);
+                                    }
+                                    databaseReference2 = firebaseDatabase.getReference("CerebralPalsy/Personal Details/" + firebaseUser.getUid() + "/MyImmunization");
+                                    checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                                        @Override
+                                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                     TableRow row =new TableRow(MainActivity.this);
                     row.setId(i);
@@ -417,8 +517,48 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
+                                            if (!checkBox.isChecked()) {
+
+                                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                                builder.setMessage("Message");
+                                                builder.setMessage("Are you sure you wanna uncheck?");
+                                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                                        databaseReference2.child(checkBox.getText().toString()).setValue(null);
+
+                                                    }
+                                                });
+                                                builder.setNegativeButton("No", null);
+                                                builder.show();
+                                            }
+                                            else {
+
+                                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                                builder.setMessage("Message");
+                                                builder.setMessage("Are you sure you wanna check?");
+                                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                                        databaseReference2.child(checkBox.getText().toString()).setValue(daysAge);
+
+                                                    }
+                                                });
+                                                builder.setNegativeButton("No", null);
+                                                builder.show();
+                                            }
                             Toast.makeText(MainActivity.this, "Number of days is hardcoded", Toast.LENGTH_SHORT).show();
 
+                                        }
+                                    });
+                                    checkBox.setId(i);
+                                    checkBox.setText(immuneList.get(i));
+                                    row.addView(checkBox);
+                                    immunizationLinearLayout.addView(row);
+                                }
+                            }
                         }
                     });
                     checkBox.setId(i);

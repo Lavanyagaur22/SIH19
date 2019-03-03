@@ -1,7 +1,7 @@
 package com.codingblocks.sih19;
 
 public class IntialClass {
-    String dateOfBirth, gender;
+    String dateOfBirth, gender, babyName;
 
     public IntialClass(String dateOfBirth, String gender) {
         this.dateOfBirth = dateOfBirth;

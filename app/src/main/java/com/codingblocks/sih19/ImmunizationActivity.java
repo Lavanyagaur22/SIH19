@@ -46,6 +46,8 @@ public class ImmunizationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_immunization);
 
+        daysAge = getIntent().getIntExtra("DaysAge", 0);
+
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 
@@ -71,8 +73,6 @@ public class ImmunizationActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 immunizationSnapshot = dataSnapshot;
-
-                daysAge = 25;
 
 
                 if (daysAge < 45) {
@@ -100,6 +100,22 @@ public class ImmunizationActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : immuneLevel.getChildren()) {
                     immuneList.add(snapshot.getKey());
                 }
+
+                immuneLevel = immunizationSnapshot.child(Integer.toString(daysAge));
+
+                immuneList.clear();
+
+                for (DataSnapshot snapshot : immuneLevel.getChildren()) {
+                    immuneList.add(snapshot.getKey());
+                }
+
+                immunizationDetailList = new ImmunizationDetailList(immuneList, immunizationSnapshot, Integer.toString(daysAge), ImmunizationActivity.this);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ImmunizationActivity.this);
+                immunizationListView.setLayoutManager(layoutManager);
+                immunizationListView.setItemAnimator(new DefaultItemAnimator());
+                immunizationListView.setAdapter(immunizationDetailList);
+                immunizationListView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(),R.anim.layout_fall_down));
+
             }
 
             @Override

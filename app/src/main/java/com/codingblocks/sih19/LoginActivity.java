@@ -85,8 +85,8 @@ public class LoginActivity extends AppCompatActivity {
 
         //If user kills the app without logging out, he/she should not need to login again.
         if(mFirebaseUser!=null){
-            finish();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
         }
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {

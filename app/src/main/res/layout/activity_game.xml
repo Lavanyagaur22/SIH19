@@ -76,6 +76,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
+                    android:id="@+id/linearLayout25"
                     android:padding="8dp">
 
                     <ImageView

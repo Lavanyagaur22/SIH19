@@ -112,7 +112,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
                 youTubeRecyclerView.setLayoutManager(layoutManager);
                 youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setAdapter(youTubeDetailList);
                 youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
 
 
@@ -124,7 +124,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
             public void onClick(View v) {
 
 
-                immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
+                immuneLevel = immunizationSnapshot.child("Government Act 1999");
 
                 youTubeIDList.clear();
                 descriptionList.clear();
@@ -139,7 +139,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
                 youTubeRecyclerView.setLayoutManager(layoutManager);
                 youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setAdapter(youTubeDetailList);
                 youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
 
             }
@@ -149,7 +149,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
             @Override
             public void onClick(View v) {
 
-                immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
+                immuneLevel = immunizationSnapshot.child("NGO");
 
                 youTubeIDList.clear();
                 descriptionList.clear();
@@ -164,7 +164,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
                 youTubeRecyclerView.setLayoutManager(layoutManager);
                 youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setAdapter(youTubeDetailList);
                 youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
 
 
@@ -175,7 +175,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
             @Override
             public void onClick(View v) {
 
-                immuneLevel = immunizationSnapshot.child("Cerebral Palsy");
+                immuneLevel = immunizationSnapshot.child("Stories that Inspire");
 
                 immuneList.clear();
 
@@ -188,7 +188,7 @@ public class HelpActivity extends AppCompatActivity implements SearchView.OnQuer
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HelpActivity.this);
                 youTubeRecyclerView.setLayoutManager(layoutManager);
                 youTubeRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                youTubeRecyclerView.setAdapter(immunizationDetailList);
+                youTubeRecyclerView.setAdapter(youTubeDetailList);
                 youTubeRecyclerView.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_fall_down));
 
 
