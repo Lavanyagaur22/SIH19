@@ -34,6 +34,17 @@
     <string name="pick_place">Choose a place</string>
     <string name="map_next">Get Nearby Hospitals</string>
 
+    <array name="language">
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Telugu</item>
+        <item>Tamil</item>
+        <item>Gujarati</item>
+        <item>Punjabi</item>
+    </array>
+
+
+    <string name="Speechtherapy">Speech Therapy</string>
 
 </resources>
 

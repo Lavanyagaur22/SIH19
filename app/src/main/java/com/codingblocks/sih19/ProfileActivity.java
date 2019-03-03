@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
         age.setText("2 year");
         //weight=7.8 and ht=71.3
         bmi.setText("15.3");
-        ImageView imgbmigraph=findViewById(R.id.bmiGraphViewPager);
+       ImageView imgbmigraph=findViewById(R.id.chart);
         imgbmigraph.setImageResource(R.drawable.bmi_curve);
 
     }

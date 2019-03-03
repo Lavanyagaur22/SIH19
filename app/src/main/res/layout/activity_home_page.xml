@@ -133,7 +133,7 @@
                 <TextView
                     android:id="@+id/pgNameTextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="21dp"
+                    android:layout_height="26dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
@@ -164,7 +164,7 @@
                 <TextView
                     android:id="@+id/a"
                     android:layout_width="wrap_content"
-                    android:layout_height="21dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="8dp"
@@ -245,15 +245,18 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/videoTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
-                            android:text="Video Diagonsis"
                             android:gravity="center"
+                            android:text="Video Diagonsis"
                             android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
@@ -296,13 +299,16 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/speechTherapy1"
                             android:layout_width="wrap_content"
-                            android:layout_height="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="58dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
-                            android:text="Speech Therapy"
                             android:gravity="center"
+                            android:text="Speech Therapy"
                             android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
@@ -344,14 +350,17 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/speechTherapy"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
                             android:text="Games Section "
                             android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
@@ -408,15 +417,18 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/immunity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
+                            android:gravity="center"
                             android:text="Immunity Reminder"
                             android:textSize="13sp"
-                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
@@ -460,14 +472,17 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/nearby"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
+                            android:gravity="center"
                             android:text="Nearby Help"
                             android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            android:gravity="center"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView9" />
@@ -510,15 +525,18 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/edu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
+                            android:gravity="center"
                             android:text="Educational Videos"
                             android:textSize="13sp"
-                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
@@ -577,15 +595,18 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/govt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
+                            android:gravity="center"
                             android:text="Govt. Schemes"
                             android:textSize="13sp"
-                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
@@ -631,15 +652,18 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/sos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
+                            android:gravity="center"
                             android:text="Data Bank"
                             android:textSize="13sp"
-                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
@@ -684,15 +708,18 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/diet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/productsansmedium"
+                            android:gravity="center"
                             android:text="Diet"
                             android:textSize="13sp"
-                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.533"
                             app:layout_constraintStart_toStartOf="parent"
@@ -705,6 +732,18 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/changeLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="8dp"
+            android:text="Change Language"
+            app:layout_constraintBottom_toTopOf="@+id/logoutTextView"
+            app:layout_constraintEnd_toEndOf="parent" />
+
 
         <TextView
             android:id="@+id/logoutTextView"

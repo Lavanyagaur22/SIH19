@@ -158,10 +158,9 @@
             </LinearLayout>-->
 
             <ImageView
-                android:id="@+id/bmiGraphViewPager"
+                android:id="@+id/chart"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="8dp" />
+                android:layout_height="250dp" />
 
 
 
@@ -181,33 +180,20 @@
                 android:layout_margin="8dp"
                 android:orientation="vertical">
 
-                <TextView
+                <Button
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_shape"
-                    android:text="       Immunization    =       3/7"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Game"
                     android:textColor="@android:color/white"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <TextView
+                <Button
                     android:id="@+id/button"
-                    android:layout_width="match_parent"
-                    android:layout_height="50sp"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_shape"
-                    android:text="       Maths Quiz        =     12/34"
-                    android:textColor="@android:color/white"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:id="@+id/button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -238,22 +224,22 @@
                     android:background="@drawable/btn_shape"
                     android:text=" Muscular Game      =               3/5"
                     android:textColor="@android:color/white"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/button7"
+
+                <Button
+                    android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_shape"
-                    android:text=" picture game      =              2/5"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Match"
                     android:textColor="@android:color/white"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
             </LinearLayout>
+
         </LinearLayout>
-
-
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
